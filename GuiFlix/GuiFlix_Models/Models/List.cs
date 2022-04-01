@@ -13,7 +13,7 @@ namespace GuiFlix_Models.Models
         public string Name { get; set; }
         public int ProfileId { get; set; }
         [ForeignKey("ProfileId")]
-        public Account Profile { get; set; }
+        public virtual Profile Profile { get; set; }
         public ICollection<Media> Medias { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace GuiFlix_Models.Models
         public LikeTypes Type { get; set; }
         public int ProfileId { get; set; }
         [ForeignKey("ProfileId")]
-        public Account Profile { get; set; }
+        public Profile Profile { get; set; }
         public enum LikeTypes
         {
             Love,

@@ -15,5 +15,6 @@ namespace GuiFlix_Models.Models
         public DateTime RealeaseDate { get; set; }
         public string Description { get; set; }
         public string ThumbnailLink { get; set; }
+        public ICollection<List> Lists { get; set; }
     }
 }
