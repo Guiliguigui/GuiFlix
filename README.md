@@ -1,0 +1,2 @@
+# GuiFlix
+Simple streaming platform
