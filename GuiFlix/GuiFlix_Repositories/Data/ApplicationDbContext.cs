@@ -36,5 +36,8 @@ namespace GuiFlix_Repositories.Data
         public DbSet<Like> Likes { get; set; }
         public DbSet<List> Lists { get; set; }
         public DbSet<Media> Medias { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CrewMember> CrewMembers { get; set; }
+        public DbSet<MediaCrewMember> MediaCrewMembers { get; set; }
     }
 }

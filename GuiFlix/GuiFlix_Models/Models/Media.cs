@@ -23,6 +23,8 @@ namespace GuiFlix_Models.Models
         [Required]
         public string ThumbnailLink { get; set; }
         public ICollection<List> Lists { get; set; }
+        public ICollection<Category> Categories { get; set; }
+        public ICollection<MediaCrewMember> CrewMembers { get; set; }
 
         public enum PegiTypes
         {
