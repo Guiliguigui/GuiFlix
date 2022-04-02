@@ -28,6 +28,10 @@ namespace GuiFlix_Repositories.Data
                      Password = "admin"
                  }
              );
+            modelBuilder.Entity<Media>()
+            .HasDiscriminator<string>(nameof(Media.Type))
+            .HasValue<Film>(nameof(Film))
+            .HasValue<TVShow>(nameof(TVShow));
         }
 
         public DbSet<Admin> Admins { get; set; }
@@ -39,5 +43,8 @@ namespace GuiFlix_Repositories.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<CrewMember> CrewMembers { get; set; }
         public DbSet<MediaCrewMember> MediaCrewMembers { get; set; }
+        public DbSet<TVShow> TVShows { get; set; }
+        public DbSet<Episode> Episodes { get; set; }
+        public DbSet<Film> Films { get; set; }
     }
 }
