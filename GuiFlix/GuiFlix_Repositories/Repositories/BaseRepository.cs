@@ -2,7 +2,7 @@
 
 namespace GuiFlix_Repositories.Repositories
 {
-    internal class BaseRepository
+    internal abstract class BaseRepository
     {
         protected readonly ApplicationDbContext _db;
         public BaseRepository(ApplicationDbContext applicationDbContext)
