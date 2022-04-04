@@ -1,2 +1,2 @@
 # GuiFlix
-Simple streaming platform
+Netflix like streaming platform in .NET 5
