@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GuiFlix_Repositories.Repositories
 {
-    internal class GenericRepository<TEntity> : BaseRepository, IRepository<TEntity> where TEntity : class, new()
+    public class GenericRepository<TEntity> : BaseRepository, IRepository<TEntity> where TEntity : class, new()
     {
         private readonly Type typeEntity;
         public GenericRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)

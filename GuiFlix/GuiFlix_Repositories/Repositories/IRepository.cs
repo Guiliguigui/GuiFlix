@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GuiFlix_Repositories.Repositories
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         Task<T> Create(T entity);
         Task<T> Find(int id);
