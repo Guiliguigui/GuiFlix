@@ -14,6 +14,6 @@ namespace GuiFlix_Models.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        ICollection<MediaCrewMember> Medias { get; set; }
+        public ICollection<MediaCrewMember> Medias { get; set; }
     }
 }
