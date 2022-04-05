@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiFlix_Repositories", "GuiFlix_Repositories\GuiFlix_Repositories.csproj", "{14DAB4DB-D835-40F6-8C58-CACB69404256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiFlix_Repositories", "GuiFlix_Repositories\GuiFlix_Repositories.csproj", "{14DAB4DB-D835-40F6-8C58-CACB69404256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiFlix_Models", "GuiFlix_Models\GuiFlix_Models.csproj", "{33051A38-9CE8-48B0-9E73-139B77F56D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiFlix_Models", "GuiFlix_Models\GuiFlix_Models.csproj", "{33051A38-9CE8-48B0-9E73-139B77F56D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiFlix_API", "GuiFlix_API\GuiFlix_API.csproj", "{B913BC2E-3F75-4F46-BBD4-4B4C06C311AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{33051A38-9CE8-48B0-9E73-139B77F56D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33051A38-9CE8-48B0-9E73-139B77F56D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33051A38-9CE8-48B0-9E73-139B77F56D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B913BC2E-3F75-4F46-BBD4-4B4C06C311AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B913BC2E-3F75-4F46-BBD4-4B4C06C311AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B913BC2E-3F75-4F46-BBD4-4B4C06C311AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B913BC2E-3F75-4F46-BBD4-4B4C06C311AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
