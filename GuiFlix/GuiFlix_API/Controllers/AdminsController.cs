@@ -2,7 +2,6 @@
 using GuiFlix_Models.Models;
 using GuiFlix_Repositories.Repositories;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace GuiFlix_API.Controllers
 {

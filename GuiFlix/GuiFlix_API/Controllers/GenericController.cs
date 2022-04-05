@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using GuiFlix_Models.Models;
-using GuiFlix_Repositories.Data;
 using GuiFlix_Repositories.Repositories;
 
 namespace GuiFlix_API.Controllers
