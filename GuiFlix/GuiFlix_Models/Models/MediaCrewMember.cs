@@ -14,7 +14,6 @@ namespace GuiFlix_Models.Models
         [Required]
         public int MediaId { get; set; }
         [ForeignKey("MediaId")]
-        [JsonIgnore]
         public Media Media { get; set; }
         [Required]
         public string Role { get; set; }

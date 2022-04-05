@@ -15,11 +15,8 @@ namespace GuiFlix_Models.Models
         [Required]
         public int AccountId { get; set; }
         [ForeignKey("AccountId")]
-        [JsonIgnore]
         public Account Account { get; set; }
-        [JsonIgnore]
         public ICollection<List> Lists { get; set; }
-        [JsonIgnore]
         public ICollection<Like> Likes { get; set; }
     }
 }

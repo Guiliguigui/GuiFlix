@@ -23,7 +23,6 @@ namespace GuiFlix_Models.Models
         [Required]
         public int TVShowId { get; set; }
         [ForeignKey("TVShowId")]
-        [JsonIgnore]
         public TVShow TVShow { get; set; }
         [Required]
         public TimeSpan Duration { get; set; }

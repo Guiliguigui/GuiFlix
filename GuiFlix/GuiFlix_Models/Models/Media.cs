@@ -20,7 +20,6 @@ namespace GuiFlix_Models.Models
         public string Description { get; set; }
         [Required]
         public string ThumbnailLink { get; set; }
-        [JsonIgnore]
         public ICollection<List> Lists { get; set; }
         public ICollection<Category> Categories { get; set; }
         public ICollection<MediaCrewMember> CrewMembers { get; set; }
