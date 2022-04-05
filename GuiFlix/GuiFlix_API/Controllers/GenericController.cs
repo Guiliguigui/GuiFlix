@@ -13,23 +13,23 @@ namespace GuiFlix_API.Controllers
 {
     public class GenericController<TEntity> : ControllerBase where TEntity : class, new()
     {
-        private readonly IRepository<TEntity> _genericRepository;
+        protected readonly IRepository<TEntity> _repository;
 
         public GenericController(IRepository<TEntity> genericRepository)
         {
-            _genericRepository = genericRepository;
+            _repository = genericRepository;
         }
 
         [HttpGet]
         public virtual async Task<ActionResult<IEnumerable<TEntity>>> GetAll()
         {
-            return Ok(await _genericRepository.FindAll());
+            return Ok(await _repository.FindAll());
         }
 
         [HttpGet("{id}")]
         public virtual async Task<ActionResult<TEntity>> Get(int id)
         {
-            var account = await _genericRepository.Find(id);
+            var account = await _repository.Find(id);
 
             if (account == null)
             {
@@ -43,7 +43,7 @@ namespace GuiFlix_API.Controllers
         public virtual async Task<IActionResult> Put(TEntity entity)
         {
 
-            if (await _genericRepository.Update(entity) == null)
+            if (await _repository.Update(entity) == null)
             {
                 return NotFound();
             }
@@ -54,7 +54,7 @@ namespace GuiFlix_API.Controllers
         [HttpPost]
         public virtual async Task<ActionResult<TEntity>> Post(TEntity entity)
         {
-            entity = await _genericRepository.Create(entity);
+            entity = await _repository.Create(entity);
 
             return CreatedAtAction("GetIEntity", new { id = entity.GetType().GetProperty("Id").GetValue(entity) }, entity);
         }
@@ -62,13 +62,13 @@ namespace GuiFlix_API.Controllers
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> Delete(int id)
         {
-            var entity = await _genericRepository.Find(id);
+            var entity = await _repository.Find(id);
             if (entity == null)
             {
                 return NotFound();
             }
 
-            await _genericRepository.Delete(id);
+            await _repository.Delete(id);
 
             return NoContent();
         }
