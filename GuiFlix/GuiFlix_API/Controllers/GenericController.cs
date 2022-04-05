@@ -56,7 +56,7 @@ namespace GuiFlix_API.Controllers
         {
             entity = await _repository.Create(entity);
 
-            return CreatedAtAction("GetIEntity", new { id = entity.GetType().GetProperty("Id").GetValue(entity) }, entity);
+            return CreatedAtAction("Get", new { id = entity.GetType().GetProperty("Id").GetValue(entity) }, entity);
         }
 
         [HttpDelete("{id}")]
