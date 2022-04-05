@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
@@ -18,6 +19,7 @@ namespace GuiFlix_Models.Models
         [Required]
         public int MediaId { get; set; }
         [ForeignKey("MediaId")]
+        [JsonIgnore]
         public Media Media { get; set; }
         [Required]
         public string Role { get; set; }

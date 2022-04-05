@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
@@ -22,6 +23,7 @@ namespace GuiFlix_Models.Models
         public string Description { get; set; }
         [Required]
         public string ThumbnailLink { get; set; }
+        [JsonIgnore]
         public ICollection<List> Lists { get; set; }
         public ICollection<Category> Categories { get; set; }
         public ICollection<MediaCrewMember> CrewMembers { get; set; }

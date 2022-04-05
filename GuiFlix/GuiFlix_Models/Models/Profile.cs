@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
@@ -18,8 +19,11 @@ namespace GuiFlix_Models.Models
         [Required]
         public int AccountId { get; set; }
         [ForeignKey("AccountId")]
+        [JsonIgnore]
         public Account Account { get; set; }
+        [JsonIgnore]
         public ICollection<List> Lists { get; set; }
+        [JsonIgnore]
         public ICollection<Like> Likes { get; set; }
     }
 }

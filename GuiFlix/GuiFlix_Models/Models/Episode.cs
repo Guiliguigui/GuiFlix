@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
@@ -26,6 +27,7 @@ namespace GuiFlix_Models.Models
         [Required]
         public int TVShowId { get; set; }
         [ForeignKey("TVShowId")]
+        [JsonIgnore]
         public TVShow TVShow { get; set; }
         [Required]
         public TimeSpan Duration { get; set; }

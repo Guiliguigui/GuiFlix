@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
@@ -16,6 +17,7 @@ namespace GuiFlix_Models.Models
         [Required]
         public int ProfileId { get; set; }
         [ForeignKey("ProfileId")]
+        [JsonIgnore]
         public virtual Profile Profile { get; set; }
         public ICollection<Media> Medias { get; set; }
     }
