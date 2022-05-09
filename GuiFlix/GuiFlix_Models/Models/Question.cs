@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace GuiFlix_Models.Models
 {
-    public class Category
+    public class Question
     {
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
-        public ICollection<Media> Medias { get; set; }
+        public string Title { get; set; }
+        [Required]
+        public string Answer { get; set; }
     }
 }

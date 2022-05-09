@@ -31,6 +31,38 @@ namespace GuiFlix_Repositories.Data
                      Password = "admin"
                  }
              );
+            modelBuilder.Entity<Question>().HasData(
+                 new Question
+                 {
+                     Id = 1,
+                     Title = "What is Guiflix ?",
+                     Answer = "It's a Netflix-like streaming platform."
+                 },
+                 new Question
+                 {
+                     Id = 2,
+                     Title = "How much does Guiflix cost ?",
+                     Answer = "It cost nothing."
+                 },
+                 new Question
+                 {
+                     Id = 3,
+                     Title = "Where can I watch ?",
+                     Answer = "You have to register to watch anything."
+                 },
+                 new Question
+                 {
+                     Id = 4,
+                     Title = "How do I cancel ?",
+                     Answer = "You can delete your account at any moment in your account settings."
+                 },
+                 new Question
+                 {
+                     Id = 5,
+                     Title = "What can I watch on Netflix ?",
+                     Answer = "Principaly, you can watch Films and Tv Shows."
+                 }
+             );
             modelBuilder.Entity<Media>()
             .HasDiscriminator<string>(nameof(Media.Type))
             .HasValue<Film>(nameof(Film))
@@ -49,5 +81,6 @@ namespace GuiFlix_Repositories.Data
         public DbSet<TVShow> TVShows { get; set; }
         public DbSet<Episode> Episodes { get; set; }
         public DbSet<Film> Films { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }
