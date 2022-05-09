@@ -1,0 +1,31 @@
+.HomeView{
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(157, 156, 156, 0.6),rgba(0, 0, 0, 0.6)), url(../../Assets/GuiFlixBackGroundHome.jpg);
+    height: 100vh;
+    width: 100vw;
+    
+    color: White;
+}
+.divLink1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    
+}
+
+.divLink2 {
+    margin-top: 5vh;
+}
+
+.divText {
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+    
+    
+
+}
+.h1Text{
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: 10vh;
+}
