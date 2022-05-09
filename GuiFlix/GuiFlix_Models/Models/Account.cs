@@ -20,6 +20,8 @@ namespace GuiFlix_Models.Models
         public string LastName { get; set; }
         [Required]
         public string Phone { get; set; }
-        public ICollection<Profile> Profiles { get; set; } 
+        public ICollection<Profile> Profiles { get; set; }
+        [Required]
+        public bool IsBanned { get; set; }
     }
 }
