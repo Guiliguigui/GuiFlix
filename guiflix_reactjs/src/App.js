@@ -7,6 +7,7 @@ import TvShowView from './Views/TvShowView/TvShowView';
 import NavigationView from './Views/NavigationView/NavigationView';
 import RegistrerView from './Views/RegistrerView/RegistrerView';
 import HomeView from './Views/HomeView/HomeView';
+import FAQView from './Views/FAQView/FAQView';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/film" element={<FilmView />} />
           <Route path="/tvshow" element={<TvShowView />} />
           <Route path="/registrer" element={<RegistrerView />} />
+          <Route path="/FAQ" element={<FAQView/>}/>
         </Routes>
       </BrowserRouter>
       
