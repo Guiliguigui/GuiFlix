@@ -72,6 +72,8 @@ namespace GuiFlix_Repositories.Repositories
         public virtual async Task<bool> Delete(int id)
         {
             TEntity entity = await _db.Set<TEntity>().FindAsync(id);
+            if (entity == null)
+                return false;
             _db.Set<TEntity>().Remove(entity);
             return await _db.SaveChangesAsync() == 1;
         }

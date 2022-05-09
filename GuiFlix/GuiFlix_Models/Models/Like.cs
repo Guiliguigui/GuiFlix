@@ -19,6 +19,11 @@ namespace GuiFlix_Models.Models
         [ForeignKey("ProfileId")]
         [JsonIgnore]
         public Profile Profile { get; set; }
+        [Required]
+        public int MediaId { get; set; }
+        [ForeignKey("MediaId")]
+        [JsonIgnore]
+        public Media Media { get; set; }
         public enum LikeTypes
         {
             Love,

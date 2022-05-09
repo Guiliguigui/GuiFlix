@@ -62,13 +62,10 @@ namespace GuiFlix_API.Controllers
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> Delete(int id)
         {
-            var entity = await _repository.Find(id);
-            if (entity == null)
+            if (!await _repository.Delete(id))
             {
                 return NotFound();
             }
-
-            await _repository.Delete(id);
 
             return NoContent();
         }
