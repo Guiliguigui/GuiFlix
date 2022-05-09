@@ -62,8 +62,9 @@ namespace GuiFlix_Repositories.Repositories
                 var valueFromDb = property.GetValue(entityFromDb);
                 var valueNewEntity = property.GetValue(entity);
                 if (valueFromDb != valueNewEntity)
-                    property.SetValue(entity, valueNewEntity);
+                    property.SetValue(entityFromDb, valueNewEntity);
             }
+            //_db.Set<TEntity>().Update(entityFromDb);
             await _db.SaveChangesAsync();
             return await _db.Set<TEntity>().FindAsync(typeEntity.GetProperty("Id").GetValue(entity));
         }

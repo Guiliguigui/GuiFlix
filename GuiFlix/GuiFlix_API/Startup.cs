@@ -49,6 +49,7 @@ namespace GuiFlix_API
             services.AddScoped<IRepository<Media>, MediaRepository>();
             services.AddScoped<IRepository<CrewMember>, CrewMemberRepository>();
             services.AddScoped<IRepository<Category>, CategoryRepository>();
+            services.AddScoped<IRepository<Question>, QuestionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
