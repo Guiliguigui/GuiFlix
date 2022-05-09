@@ -23,46 +23,23 @@ namespace GuiFlix_Repositories.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admin>().HasData(
-                 new Admin
-                 {
-                     Id = 1,
-                     UserName = "admin",
-                     Password = "admin"
-                 }
-             );
-            modelBuilder.Entity<Question>().HasData(
-                 new Question
-                 {
-                     Id = 1,
-                     Title = "What is Guiflix ?",
-                     Answer = "It's a Netflix-like streaming platform."
-                 },
-                 new Question
-                 {
-                     Id = 2,
-                     Title = "How much does Guiflix cost ?",
-                     Answer = "It cost nothing."
-                 },
-                 new Question
-                 {
-                     Id = 3,
-                     Title = "Where can I watch ?",
-                     Answer = "You have to register to watch anything."
-                 },
-                 new Question
-                 {
-                     Id = 4,
-                     Title = "How do I cancel ?",
-                     Answer = "You can delete your account at any moment in your account settings."
-                 },
-                 new Question
-                 {
-                     Id = 5,
-                     Title = "What can I watch on Netflix ?",
-                     Answer = "Principaly, you can watch Films and Tv Shows."
-                 }
-             );
+            modelBuilder.Entity<Admin>().HasData(InitialData.Admins);
+            modelBuilder.Entity<Question>().HasData(InitialData.Questions);
+            modelBuilder.Entity<Account>().HasData(InitialData.Accounts);
+            modelBuilder.Entity<Profile>().HasData(InitialData.Profiles);
+            modelBuilder.Entity<Film>().HasData(InitialData.Films);
+            modelBuilder.Entity<TVShow>().HasData(InitialData.TVShows);
+            modelBuilder.Entity<Episode>().HasData(InitialData.Episodes);
+            modelBuilder.Entity<Category>().HasData(InitialData.Categories);
+            modelBuilder.Entity<Category>().HasMany(c => c.Medias).WithMany(m => m.Categories).UsingEntity(cm=>cm.ToTable("CategoryMedia").HasData(InitialData.CategoryMedia));
+            modelBuilder.Entity<CrewMember>().HasData(InitialData.CrewMembers);
+            modelBuilder.Entity<MediaCrewMember>().HasData(InitialData.MediaCrewMember);
+            modelBuilder.Entity<List>().HasData(InitialData.Lists);
+            modelBuilder.Entity<List>().HasMany(c => c.Medias).WithMany(m => m.Lists).UsingEntity(cm => cm.ToTable("ListMedia").HasData(InitialData.ListMedia));
+            modelBuilder.Entity<Like>().HasData(InitialData.Likes);
+
+            modelBuilder.Entity<Like>().HasAlternateKey("ProfileId", "MediaId");
+
             modelBuilder.Entity<Media>()
             .HasDiscriminator<string>(nameof(Media.Type))
             .HasValue<Film>(nameof(Film))
