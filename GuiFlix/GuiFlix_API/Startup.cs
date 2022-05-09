@@ -41,14 +41,14 @@ namespace GuiFlix_API
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(connectionString));
 
-            services.AddScoped<IRepository<Admin>,AdminRepository>();
+            services.AddScoped<IRepository<Admin>, AdminRepository>();
             services.AddScoped<IRepository<Account>, AccountRepository>();
-            services.AddScoped<IRepository<Profile>,ProfileRepository>();
-            services.AddScoped<IRepository<Like>,LikeRepository>();
-            services.AddScoped<IRepository<List>,ListRepository>();
-            services.AddScoped<IRepository<Media>,MediaRepository>();
-            services.AddScoped<IRepository<CrewMember>,CrewMemberRepository>();
-            services.AddScoped<IRepository<Category>,CategoryRepository>();
+            services.AddScoped<IRepository<Profile>, ProfileRepository>();
+            services.AddScoped<IRepository<Like>, LikeRepository>();
+            services.AddScoped<IRepository<List>, ListRepository>();
+            services.AddScoped<IRepository<Media>, MediaRepository>();
+            services.AddScoped<IRepository<CrewMember>, CrewMemberRepository>();
+            services.AddScoped<IRepository<Category>, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
