@@ -37,28 +37,25 @@ export default function RegisterComponent() {
         }
     };
     return (
-        <div>
-            <section className="vh-100 cardName">
+        <div className="registerview">
+            <section className="vh-100 card">
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-xl-10">
                             <div className="cardBord"  >
                                 <div className="row g-0">
-                                    <div className="col-md-6 col-lg-5 d-none d-md-block">
-                                        <img src=""
-                                            alt="login form" className="img-fluid imgStyle" />
+                                    <div className="col-md-6 col-lg-5 d-none d-md-block logo">
+                                    <img src="../../Assets/LogoGuiFlix.png"
+                                            alt="GuiFlix_Logo" className="img-fluid imgStyle" />
                                     </div>
                                     <div className="col-md-6 col-lg-7 d-flex align-items-center">
                                         <div className="card-body p-4 p-lg-5 text-black">
-
                                             <form>
                                                 <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
-
                                                 <div className="form-outline mb-4">
                                                     <input type="email" id="form2Example17" className="form-control form-control-lg" />
                                                     <label className="form-label" htmlFor="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)}>Email address</label>
                                                 </div>
-
                                                 <div className="form-outline mb-4">
                                                     <input type="password" id="form2Example27" className="form-control form-control-lg" />
                                                     <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value)}>Password</label>
@@ -75,9 +72,8 @@ export default function RegisterComponent() {
                                                     <input type="password" id="form2Example27" className="form-control form-control-lg" />
                                                     <label className="form-label" htmlFor="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)}>Phone</label>
                                                 </div>
-
                                                 <div className="pt-1 mb-4">
-                                                    <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign In</button>
+                                                    <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign Up</button>
                                                 </div>
                                                 <a href="#!" className="small text-muted">Terms of use.</a>
                                                 <a href="#!" className="small text-muted">Privacy policy</a>
@@ -99,4 +95,3 @@ export default function RegisterComponent() {
         </div>
     );
 }
-
