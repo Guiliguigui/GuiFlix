@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function QuestionComponent(props) {
     const Display = ()=>{
-        document.getElementById(props.Question.Id).style.display == "none" ? document.getElementById(props.Question.Id).style.display = "" : document.getElementById(props.Question.Id).style.display = "none";
+        document.getElementById(props.Question.Id).style.display === "none" ? document.getElementById(props.Question.Id).style.display = "" : document.getElementById(props.Question.Id).style.display = "none";
     }
     return (
         <div className="questionAccordion">

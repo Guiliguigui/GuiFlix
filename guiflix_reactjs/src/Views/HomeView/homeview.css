@@ -1,15 +1,14 @@
 .HomeView{
-    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(157, 156, 156, 0.6),rgba(0, 0, 0, 0.6)), url(../../Assets/GuiFlixBackGroundHome.jpg);
-    height: 100vh;
-    width: 100vw;
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(251, 251, 251, 0.3),rgba(0, 0, 0, 0.6)), url(../../Assets/GuiFlixBackGroundHome.jpg);
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
     color: White;
 }
 .divLink1 {
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    
 }
 
 .divLink2 {
@@ -20,9 +19,6 @@
     width: 50vw;
     text-align: center;
     margin: auto;
-    
-    
-
 }
 .h1Text{
     font-weight: bold;
