@@ -11,6 +11,7 @@ namespace GuiFlix_Repositories.Repositories
         Task<T> Find(int id);
         Task<T> Find(Expression<Func<T, bool>> predicate);
         Task<IEnumerable<T>> FindAll();
+        Task<IEnumerable<T>> FindRandom(int quantity);
         Task<IEnumerable<T>> FindAll(Expression<Func<T, bool>> predicate);
         Task<T> Update(T entity);
         Task<bool> Delete(int id);

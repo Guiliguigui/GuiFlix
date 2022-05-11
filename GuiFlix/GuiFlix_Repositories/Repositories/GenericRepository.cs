@@ -45,6 +45,11 @@ namespace GuiFlix_Repositories.Repositories
             return await _db.Set<TEntity>().ToListAsync();
         }
 
+        public virtual async Task<IEnumerable<TEntity>> FindRandom(int quantity)
+        {
+            return await _db.Set<TEntity>().OrderBy(r => Guid.NewGuid()).Take(quantity).ToListAsync();
+        }
+
         public virtual async Task<IEnumerable<TEntity>> FindAll(Expression<Func<TEntity, bool>> predicate)
         {
             return await _db.Set<TEntity>().Where(predicate).ToListAsync();

@@ -2,6 +2,8 @@
 using GuiFlix_Repositories.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -23,6 +25,11 @@ namespace GuiFlix_Repositories.Repositories
         {
             return await _db.Categories.Include(e => e.Medias)
                 .FirstOrDefaultAsync(predicate);
+        }
+
+        public override async Task<IEnumerable<Category>> FindRandom(int quantity)
+        {
+            return await _db.Categories.OrderBy(r => Guid.NewGuid()).Include(e => e.Medias).Take(quantity).ToListAsync();
         }
     }
 }
