@@ -111,6 +111,11 @@ namespace GuiFlix_API
 
             app.UseRouting();
 
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -118,11 +123,6 @@ namespace GuiFlix_API
             {
                 endpoints.MapControllers();
             });
-
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
         }
     }
 }
