@@ -11,19 +11,21 @@ import FooterComponent from './Components/FooterComponent/FooterComponent';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FAQView from './Views/FAQView/FAQView';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Fragment><HomeView /><FooterComponent/></Fragment>} />
+          <Route path="/" element={<Fragment><HomeView /><FAQView/><FooterComponent/></Fragment>} />
            <Route path="/navigation" element={<Fragment><NavBarComponent/><NavigationView /><FooterComponent/></Fragment>} />
           <Route path="/profile" element={<ProfileView />} />
           <Route path="/film" element={<FilmView />} />
           <Route path="/login" element={<LoginView />} />
            <Route path="/tvshow" element={<TvShowView />} />
           <Route path="/register" element={<RegisterView />} />
+          <Route path="/FAQ" element={<FAQView/>}/>
         </Routes>
       </BrowserRouter>
       

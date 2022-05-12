@@ -9,15 +9,14 @@ export default function QuestionComponent(props) {
     }
     return (
         <div className="questionAccordion">
-            <h2 className="headerAccordion" >
+            <div className="headerAccordion" >
                 <button className="buttonAccordion" onClick={Display}>
-                    {props.Question.Title}<FontAwesomeIcon icon={faPlus} style={{ color: 'rgb(40, 44, 52)',fontSize:'25px' }} />
+                    {props.Question.Title}<FontAwesomeIcon icon={faPlus} />
                 </button>
-            </h2>
-            <div className="fdsf" id={props.Question.Id}>
+            </div>
+            <div id={props.Question.Id} style={{display:'none'}}>
                 <div className="bodyAccordion">
                     {props.Question.Answer}
-                    
                 </div>
             </div>
         </div>

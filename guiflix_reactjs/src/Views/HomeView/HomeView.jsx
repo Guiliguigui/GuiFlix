@@ -18,6 +18,5 @@ export default function HomeView() {
             <Link to="/login"><button className="btn btn-danger me-5">Connection</button></Link>
             <Link to="/register"><button className="btn btn-danger">Sign in</button></Link>
         </div>
-
     </div>);
 }

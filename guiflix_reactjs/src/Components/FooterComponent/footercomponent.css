@@ -1,17 +1,34 @@
 .footer{
     position: absolute;
-    height: 10vh;
     width: 100%;
     background-color: black;
-    color: white;
+    color: grey;
     text-decoration: none;
-
+    padding: 3vh 30vw;
+    border-top: 8px solid rgba(48,48,48,255);
+    
 }
 .link{
     text-decoration: none;
-    color: white;
+    color: grey;
 }
 
 .link:hover{
-    color: orangered
+    text-decoration: underline;
+    color: grey;
+}
+.github{
+    padding: 1vh 0;
+    display: flex;
+    justify-content: space-between;
+}
+.corporation{
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+}
+.other{
+ display: flex;
+ padding: 1vh 0;
+
 }
