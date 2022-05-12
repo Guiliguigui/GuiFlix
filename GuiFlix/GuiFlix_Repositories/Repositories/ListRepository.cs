@@ -29,7 +29,16 @@ namespace GuiFlix_Repositories.Repositories
 
         public override async Task<IEnumerable<List>> FindRandom(int quantity)
         {
-            return await _db.Lists.OrderBy(r => Guid.NewGuid()).Include(e => e.Medias).Take(quantity).ToListAsync();
+            return await _db.Lists.OrderBy(r => Guid.NewGuid()).Take(quantity)
+            .Include(e => e.Medias)
+            .ToListAsync();
+        }
+
+        public override async Task<IEnumerable<List>> FindRandom(int quantity, Expression<Func<List, bool>> predicate = null)
+        {
+            return await _db.Lists.Where(predicate).OrderBy(r => Guid.NewGuid()).Take(quantity)
+            .Include(e => e.Medias)
+            .ToListAsync();
         }
     }
 }

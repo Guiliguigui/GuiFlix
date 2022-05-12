@@ -4,6 +4,7 @@ using GuiFlix_Repositories.Repositories;
 using System.Threading.Tasks;
 using System.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace GuiFlix_API.Controllers
 {
@@ -11,19 +12,34 @@ namespace GuiFlix_API.Controllers
     [ApiController]
     public class CategoryController : GenericController<Category>
     {
-        public CategoryController(IRepository<Category> categoryRepository) : base(categoryRepository)
+        protected readonly IRepository<Media> _mediaRepository;
+        public CategoryController(IRepository<Category> categoryRepository, IRepository<Media> mediaRepository) : base(categoryRepository)
         {
+            _mediaRepository = mediaRepository;
         }
 
         [HttpGet("Random")]
-        public virtual async Task<ActionResult<Category>> GetRandom(int quantity)
+        public virtual async Task<ActionResult<IEnumerable<Category>>> GetRandom(int quantity, string? mediaType)
         {
-            return Ok((await _repository.FindRandom(quantity))
-                .Select(e =>
+            if (mediaType == null)
+                return Ok((await _repository.FindRandom(quantity))
+                    .Select(e =>
+                    {
+                        e.Medias = e.Medias.OrderBy(r => Guid.NewGuid()).ToList();
+                        return e;
+                    }));
+
+            if (mediaType == nameof(TVShow) || mediaType == nameof(Film))
+            {
+                var categories = await _repository.FindRandom(quantity);
+                foreach (var category in categories)
                 {
-                    e.Medias = e.Medias.OrderBy(r => Guid.NewGuid()).ToList();
-                    return e;
-                }));
+                    category.Medias = (await _mediaRepository.FindRandom(int.MaxValue, m => m.Categories.Contains(category) && m.Type == mediaType)).ToList();
+                }
+                return Ok(categories);  
+            }
+
+            return BadRequest($"Invalid Type, must be either null, \"{nameof(TVShow)}\" or \"{nameof(Film)}\"");
         }
     }
 }

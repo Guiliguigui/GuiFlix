@@ -52,5 +52,10 @@ namespace GuiFlix_Repositories.Repositories
         {
             return await _db.Medias.OrderBy(r => Guid.NewGuid()).Take(quantity).ToListAsync();
         }
+
+        public override async Task<IEnumerable<Media>> FindRandom(int quantity, Expression<Func<Media, bool>> predicate = null)
+        {
+            return await _db.Medias.Where(predicate).OrderBy(r => Guid.NewGuid()).Take(quantity).ToListAsync();
+        }
     }
 }
