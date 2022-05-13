@@ -26,3 +26,22 @@
     font-size: 60px;
     margin-top: 15vh;
 }
+@media (max-width: 1000px),(max-height:650px) {
+    .divText,.divLink1{
+        display: none;
+    }
+    .btn{
+        transform: scale(1.5);
+        margin: 5vw;
+    }
+    .divLink2{
+        margin: 0;
+        padding: 20vh 0 0 0;
+    }
+
+}
+@media(max-width:350px),(max-height:200px){
+    .divLink2{
+        display: none;
+    }
+}

@@ -32,3 +32,12 @@
  padding: 1vh 0;
 
 }
+
+@media (max-width:350px),(max-height:200px){
+    .footer{
+        height: 10vh;
+    }
+    .github,.other,.corporation{
+        display: none;
+    }
+}

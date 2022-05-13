@@ -8,3 +8,8 @@
     background-color: black;
     padding: 8vh 0 10vh 0;
 }
+@media (max-width:350px),(max-height:200px){
+    .FAQ{
+        display: none;
+    }
+}

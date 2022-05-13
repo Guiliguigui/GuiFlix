@@ -1,0 +1,27 @@
+.NavBar{
+    background-color: black;
+    color: white;
+    display: flex;
+}
+.linkNavBar{    
+    text-decoration: none;
+    font-weight: bold;
+    color:white;
+    font-size: 25px;
+    padding: 0 3vw;
+    margin: auto 0;
+}
+.linkNavBar:hover{
+    color: red;
+}
+.smallScreen{
+    display: none;
+}
+@media(max-width:500px){
+    .smallScreen{
+        display: block;
+    }
+    .largeScreen{
+        display: none;
+    }
+}
