@@ -1,11 +1,11 @@
 .questionAccordion{
     width: 60vw;
-    margin: 5px auto;
+    margin: 7px auto;
     
 }
 
 .buttonAccordion{
-    padding: 1vh 1vw 1vh 1vw;
+    padding: 1vh 2vw 1vh 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,12 +13,16 @@
     background-color: rgba(48,48,48,255);
     color: white;
     font-size: 30px;
+    border: none;
 }
 
 .bodyAccordion{
-    background-color: grey;
-    font-size: 20px;
+    background-color: rgba(48,48,48,255);
+    font-size: 25px;
     padding: 1vh 2vw 1vh 2vw;
     display: flex;
     color: white;
+    border-top: 1px solid black;
+    white-space: normal;
+    text-align: left;
 }

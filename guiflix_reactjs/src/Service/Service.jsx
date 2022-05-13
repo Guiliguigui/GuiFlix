@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5001/api/"
+const url = "https://localhost:44330/api/"
 
 //users
 export const get = path => {

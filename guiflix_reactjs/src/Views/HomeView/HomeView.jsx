@@ -6,7 +6,7 @@ import './homeview.css';
 export default function HomeView() {
     return (<div className="HomeView">
         <div className="divLink1">
-            <Link to="/"><img src={Logo} alt="LogoGuiFlix" width={120} /></Link>
+            <Link to="/"><img src={Logo} alt="LogoGuiFlix" width={200} /></Link>
             <Link to="/register"><button className="btn btn-danger">Sign in</button></Link>
         </div>
         <div className="divText">
@@ -15,8 +15,8 @@ export default function HomeView() {
             <div className="fs-4">Ready to watch? Enter your email to create or restart your membership.</div>
         </div>
         <div className="divLink2">
-            <Link to="/login"><button className="btn btn-danger me-5">Connection</button></Link>
-            <Link to="/register"><button className="btn btn-danger">Sign in</button></Link>
+            <Link to="/login"><button className="btn btn-lg btn-danger me-5">Connection</button></Link>
+            <Link to="/register"><button className="btn btn-lg btn-danger">Sign in</button></Link>
         </div>
     </div>);
 }

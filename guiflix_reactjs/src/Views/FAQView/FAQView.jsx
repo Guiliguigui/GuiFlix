@@ -7,10 +7,9 @@ export default function FAQView() {
 
     const [Question, SetQuestion] = useState([]);
     useEffect(() => {
-        /*get("Question").then((res)=>{
+        get("Question").then((res)=>{
             SetQuestion(res.data);
-        })*/
-        SetQuestion([{Id:1,Title:"Question 1",Answer:"fhdsiufdsfsfgezuifgeufgi"},{Id:2,Title:"Question 2",Answer:"fhdsiufgezuifgeugfgfgfgi"}]);
+        })
     }, [])
 
 
