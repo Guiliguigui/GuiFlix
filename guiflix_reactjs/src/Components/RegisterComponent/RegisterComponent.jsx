@@ -1,55 +1,90 @@
 import React from 'react';
 import { useState } from 'react';
+import "./registercomponent.css";
+import Logo from "../../Assets/LogoGuiFlix.png";
+import { Link } from 'react-router-dom';
 
 export default function RegisterComponent() {
     const validEmail = new RegExp(
-        '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+        '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$'
     );
     const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
-    const validLastName = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+    const validLastName = new RegExp('^[A-Z]{1}[a-zA-Z\\séèë\\-_]*$');
     const validFirstName = new RegExp('^[A-Z]{1}[a-zA-Z\\séèë\\-_]*$');
     const validPhone = new RegExp('^([0|\\+33|33]+)(\\.|\\-|\\s)?([1-9]{1})((\\.|\\-|\\s)?[0-9]{2}){4}$');
+    const validHasNumber = new RegExp("[0-9]{2}");
+    const validHasUpperChar = new RegExp("[A-Z]{2}");
+    const validHasMiniMaxChars = new RegExp(".{8,15}");
+    const validHasLowerChar = new RegExp("[a-z]{2}");
+    const validHasSymbols = new RegExp("[!@#$%^&*()_+=\\[{\\]};:<>|./?,-]{2}");
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
     const [phone, setPhone] = useState('');
-    const [emailErr, setEmailErr] = useState(false);
-    const [pwdError, setPwdError] = useState(false);
-    const [lastNameError, setLastNameError] = useState(false);
-    const [firstNameError, setFirstNameError] = useState(false);
-    const [phoneError, setPhoneError] = useState(false);
+
+
+    const [fragmentError, setFragmentError] = useState(<></>);
+
+
     const validate = () => {
+        let errrorlist = [];
         if (!validEmail.test(email)) {
-            setEmailErr(true);
+            errrorlist.push(<p className="text-danger">Your Email is invalid</p>)
         }
         if (!validPassword.test(password)) {
-            setPwdError(true);
+            errrorlist.push(<p className="text-danger">Password should not be empty</p>)
+        }
+        if (!validHasNumber.test(password)) {
+            errrorlist.push(<p className="text-danger">Password should contain At least two numeric values</p>)
+        }
+        if (!validHasUpperChar.test(password)) {
+            errrorlist.push(<p className="text-danger">Password should contain At least two upper case letters</p>)
+        }
+        if (!validHasMiniMaxChars.test(password)) {
+            errrorlist.push(<p className="text-danger">Password should not be less than 8 characters and greater than 15 characters</p>)
+        }
+        if (!validHasLowerChar.test(password)) {
+            errrorlist.push(<p className="text-danger">Password should contain At least two lower case letters</p>)
+        }
+        if (!validHasSymbols.test(password)) {
+            errrorlist.push(<p className="text-danger">Password should contain At least two special case characters</p>)
         }
         if (!validLastName.test(lastName)) {
-            setLastNameError(true);
+            errrorlist.push(<p className="text-danger">Your LastName is invalid</p>)
         }
         if (!validFirstName.test(firstName)) {
-            setFirstNameError(true);
+            errrorlist.push(<p className="text-danger">Your FirstName is invalid</p>)
         }
         if (!validPhone.test(phone)) {
-            setPhoneError(true);
+            errrorlist.push(<p className="text-danger">Your Phone is invalid</p>)
         }
+        setFragmentError(
+            <>
+                {errrorlist.map((e) => {
+                    return (
+                        e
+                    )
+                })}
+            </>
+        )
     };
     return (
         <div className="registerview">
-            <section className="vh-100 card">
+            <section className="vh-100">
+                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                    <Link to="/">
+                        <img src={Logo}
+                            alt="GuiFlix_Logo" className="logo" />
+                    </Link>
+                </div>
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-xl-10">
                             <div className="cardBord"  >
                                 <div className="row g-0">
-                                    <div className="col-md-6 col-lg-5 d-none d-md-block logo">
-                                    <img src="../../Assets/LogoGuiFlix.png"
-                                            alt="GuiFlix_Logo" className="img-fluid imgStyle" />
-                                    </div>
                                     <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                        <div className="card-body p-4 p-lg-5 text-black">
+                                        <div className="card-body p-8 p-lg-7 text-white">
                                             <form>
                                                 <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
                                                 <div className="form-outline mb-4">
@@ -58,7 +93,7 @@ export default function RegisterComponent() {
                                                 </div>
                                                 <div className="form-outline mb-4">
                                                     <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value)}>Password</label>
+                                                    <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)}>Password</label>
                                                 </div>
                                                 <div className="form-outline mb-4">
                                                     <input type="password" id="form2Example27" className="form-control form-control-lg" />
@@ -78,11 +113,7 @@ export default function RegisterComponent() {
                                                 <a href="#!" className="small text-muted">Terms of use.</a>
                                                 <a href="#!" className="small text-muted">Privacy policy</a>
                                             </form>
-                                            {emailErr && <p>Your email is invalid</p>}
-                                            {pwdError && <p>Your password is invalid</p>}
-                                            {lastNameError && <p>Your LastName is invalid</p>}
-                                            {firstNameError && <p>Your FirstName is invalid</p>}
-                                            {phoneError && <p>Your Phone is invalid</p>}
+                                            {fragmentError}
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +122,6 @@ export default function RegisterComponent() {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }

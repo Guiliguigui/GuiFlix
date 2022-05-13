@@ -3,7 +3,7 @@ import RegisterComponent from '../../Components/RegisterComponent/RegisterCompon
 
 const RegisterView=()=> {
         return (
-            <div>
+            <div className="container-fluid">
                 <RegisterComponent/>
             </div>
         );

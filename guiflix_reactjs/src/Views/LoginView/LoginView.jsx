@@ -6,7 +6,7 @@ import LoginComponent from "../../Components/LoginComponent/LoginComponent";
 const LoginView = () => {
     return (
 
-        <div className="container">
+        <div className="container-fluid">
             <LoginComponent />
         </div>
 
