@@ -15,6 +15,8 @@ using System.Threading.Tasks;
 
 namespace GuiFlix_API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthenticationController : Controller
     {
         private IRepository<Account> _accountRepository;
@@ -32,7 +34,7 @@ namespace GuiFlix_API.Controllers
             _aPISettings = options.Value;
         }
 
-        [HttpPost("/User/Register")]
+        [HttpPost("User/Register")]
         public async Task<ActionResult<RegisterResponseUserDTO>> RegisterUser([FromBody] RegisterRequestUserDTO request)
         {
             if (request == null || !ModelState.IsValid)
@@ -70,7 +72,7 @@ namespace GuiFlix_API.Controllers
             };
         }
 
-        [HttpPost("/User/Login")]
+        [HttpPost("User/Login")]
         public async Task<ActionResult<LoginResponseUserDTO>> LoginUser([FromBody] LoginRequestUserDTO request)
         {
             if (request == null || !ModelState.IsValid)
@@ -111,7 +113,7 @@ namespace GuiFlix_API.Controllers
             };
         }
 
-        [HttpPost("/Admin/Login")]
+        [HttpPost("Admin/Login")]
         public async Task<ActionResult<LoginResponseAdminDTO>> LoginAdmin([FromBody] LoginRequestAdminDTO request)
         {
             if (request == null || !ModelState.IsValid)
