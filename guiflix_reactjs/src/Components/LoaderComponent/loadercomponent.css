@@ -1,0 +1,19 @@
+.loader{
+    background-color: black;
+    height: 20vh;
+    display: flex;
+}
+.iconArrowRotate{
+    margin: auto;
+    color: rgba(48,48,48,255);
+    font-size: 60px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import LoaderComponent from "../../Components/LoaderComponent/LoaderComponent";
 import QuestionComponent from "../../Components/QuestionComponent/QuestionComponent";
 import { get } from "../../Service/Service";
 import './faqview.css';
 
 export default function FAQView() {
 
-    const [Question, SetQuestion] = useState([]);
+    const [Question, setQuestion] = useState([]);
+    const [isLoading,setIsLoading] = useState(true);
     useEffect(() => {
         get("Question").then((res)=>{
-            SetQuestion(res.data);
+            setQuestion(res.data);
+            setIsLoading(false);
         })
     }, [])
 
@@ -16,7 +19,9 @@ export default function FAQView() {
     return (
         <div className="FAQ">
             <div className="titleFAQ">Frequently Ask Questions</div>
-            {Question.map((Q,index) => {
+            {isLoading? <LoaderComponent/> 
+            : 
+            Question.map((Q,index) => {
                 return (
                     <QuestionComponent key={index} Question={Q} />)
             })}

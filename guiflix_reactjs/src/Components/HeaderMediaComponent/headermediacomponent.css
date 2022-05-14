@@ -1,0 +1,30 @@
+.headerMedia{
+    background-color: black;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 60vh;
+}
+.textHeaderMedia{
+    margin: 15vh 2vw 5vh 3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 40vw;
+    height: 20vh;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    
+}
+.descriptionHeaderMedia{
+    
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.titleHeaderMedia{
+font-size: 45px;
+font-weight: bold;
+margin-bottom: 1vh;
+}
