@@ -23,20 +23,22 @@ namespace GuiFlix_Repositories.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admin>().HasData(InitialData.Admins);
-            modelBuilder.Entity<Question>().HasData(InitialData.Questions);
-            modelBuilder.Entity<Account>().HasData(InitialData.Accounts);
-            modelBuilder.Entity<Profile>().HasData(InitialData.Profiles);
-            modelBuilder.Entity<Film>().HasData(InitialData.Films);
-            modelBuilder.Entity<TVShow>().HasData(InitialData.TVShows);
-            modelBuilder.Entity<Episode>().HasData(InitialData.Episodes);
-            modelBuilder.Entity<Category>().HasData(InitialData.Categories);
-            modelBuilder.Entity<Category>().HasMany(c => c.Medias).WithMany(m => m.Categories).UsingEntity(cm=>cm.ToTable("CategoryMedia").HasData(InitialData.CategoryMedia));
-            modelBuilder.Entity<CrewMember>().HasData(InitialData.CrewMembers);
-            modelBuilder.Entity<MediaCrewMember>().HasData(InitialData.MediaCrewMember);
-            modelBuilder.Entity<List>().HasData(InitialData.Lists);
-            modelBuilder.Entity<List>().HasMany(c => c.Medias).WithMany(m => m.Lists).UsingEntity(cm => cm.ToTable("ListMedia").HasData(InitialData.ListMedia));
-            modelBuilder.Entity<Like>().HasData(InitialData.Likes);
+            var initialData = new InitialData("2eec6f24-2040-43a1-a5f4-5a7301da7314");
+            // If you change the secret key here, don't forget to put the same in GuiFlix_API/appsettings.json
+            modelBuilder.Entity<Admin>().HasData(initialData.Admins);
+            modelBuilder.Entity<Question>().HasData(initialData.Questions);
+            modelBuilder.Entity<Account>().HasData(initialData.Accounts);
+            modelBuilder.Entity<Profile>().HasData(initialData.Profiles);
+            modelBuilder.Entity<Film>().HasData(initialData.Films);
+            modelBuilder.Entity<TVShow>().HasData(initialData.TVShows);
+            modelBuilder.Entity<Episode>().HasData(initialData.Episodes);
+            modelBuilder.Entity<Category>().HasData(initialData.Categories);
+            modelBuilder.Entity<Category>().HasMany(c => c.Medias).WithMany(m => m.Categories).UsingEntity(cm=>cm.ToTable("CategoryMedia").HasData(initialData.CategoryMedia));
+            modelBuilder.Entity<CrewMember>().HasData(initialData.CrewMembers);
+            modelBuilder.Entity<MediaCrewMember>().HasData(initialData.MediaCrewMember);
+            modelBuilder.Entity<List>().HasData(initialData.Lists);
+            modelBuilder.Entity<List>().HasMany(c => c.Medias).WithMany(m => m.Lists).UsingEntity(lm => lm.ToTable("ListMedia").HasData(initialData.ListMedia));
+            modelBuilder.Entity<Like>().HasData(initialData.Likes);
 
             modelBuilder.Entity<Like>().HasAlternateKey("ProfileId", "MediaId");
 

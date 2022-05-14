@@ -1,5 +1,5 @@
 using GuiFlix_API.Helpers;
-using GuiFlix_API.Services;
+using GuiFlix_Repositories.Services;
 using GuiFlix_Models.Models;
 using GuiFlix_Repositories.Data;
 using GuiFlix_Repositories.Repositories;
@@ -45,6 +45,28 @@ namespace GuiFlix_API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GuiFlix_API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme.",
+                    Name = "Authorization",
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    Type = SecuritySchemeType.Http
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                   {
+                     new OpenApiSecurityScheme
+                     {
+                       Reference = new OpenApiReference
+                       {
+                         Type = ReferenceType.SecurityScheme,
+                         Id = "Bearer"
+                       }
+                      },
+                      new string[] { }
+                    }
+                });
             });
 
             string connectionString = Configuration.GetConnectionString("GuiFlixDB");

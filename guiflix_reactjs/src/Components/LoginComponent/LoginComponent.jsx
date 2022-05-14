@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./logincomponent.css";
+import Logo from "../../Assets/LogoGuiFlix.png";
+// import { post } from "../../Service/Service";
 
 
-export default function LoginComponent() {
+export default function LoginComponent(props) {
     const validEmail = new RegExp(
         '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
     );
@@ -19,23 +22,24 @@ export default function LoginComponent() {
             setPwdError(true);
         }
     };
-    const onValid=()=>{}
+
 
     return (
-        <div className="loginview">
-            {/* <section className="vh-100 card"> */}
-                <div className="container py-5 h-100">
+        <div className="container-fluid loginview">
+            <section className="vh-100">
+                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                    <Link to="/">
+                        <img src={Logo}
+                            alt="GuiFlix_Logo" className="logo" />
+                    </Link>
+                </div>
+                <div className="container-fluid py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-xl-10">
-                            <div className="cardBord">
-                                <div className="row g-0">
-                                    <div className="col-md-6 col-lg-5 d-none d-md-block">
-                                        <img src="../../Assets/LogoGuiFlix.png"
-                                            alt="GuiFlix_Logo" />
-                                    </div>
+                            <div className="cardBord"  >
+                                <div className="row">
                                     <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                        <div className="card-body p-4 p-lg-5 text-black">
-
+                                        <div className="card-body p-8 p-lg-7 text-white">
                                             <form>
                                                 <h5 className="fw-normal mb-3 pb-3" >Sign In</h5>
 
@@ -50,15 +54,15 @@ export default function LoginComponent() {
                                                 </div>
 
                                                 <div className="pt-1 mb-4">
-                                                    <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate} onChange={onValid}>Login</button>
+                                                    <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Login</button>
                                                 </div>
                                                 <a className="small text-muted" href="#!">Forgot password?</a>
                                                 <p className="mb-5 pb-lg-2" >New on GuiFlix ? <Link className="small text-muted" to="/register">Register Here</Link></p>
                                                 <a href="#!" className="small text-muted">Terms of use.</a>
                                                 <a href="#!" className="small text-muted">Privacy policy</a>
                                             </form>
-                                            {emailErr && <p>Your email is invalid</p>}
-                                            {pwdError && <p>Your password is invalid</p>}
+                                            {emailErr && <p className="text-danger font-size-bold">Your email is invalid</p>}
+                                            {pwdError && <p className="text-danger font-size-bold">Your password is invalid</p>}
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +70,7 @@ export default function LoginComponent() {
                         </div>
                     </div>
                 </div>
-            {/* </section> */}
+            </section>
         </div>
     );
 }

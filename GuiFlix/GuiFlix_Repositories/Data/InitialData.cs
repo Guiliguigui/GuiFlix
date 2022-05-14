@@ -1,4 +1,5 @@
 ﻿using GuiFlix_Models.Models;
+using GuiFlix_Repositories.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +8,23 @@ using System.Threading.Tasks;
 
 namespace GuiFlix_Repositories.Data
 {
-    public static class InitialData
+    public class InitialData
     {
-        public static readonly Admin[] Admins = new Admin[]
+        public CryptPasswordService _cryptPasswordService;
+        public InitialData(string secretKey)
+        {
+            _cryptPasswordService = new CryptPasswordService(secretKey);
+        }
+        public Admin[] Admins => new Admin[]
         {
             new Admin
             {
                 Id = 1,
                 UserName = "admin",
-                Password = "admin"
+                Password = _cryptPasswordService.EncryptPassword("admin")
             }
         };
-        public static readonly Question[] Questions = new Question[]
+        public Question[] Questions => new Question[]
         {
             new Question
             {
@@ -51,7 +57,7 @@ namespace GuiFlix_Repositories.Data
                 Answer = "Principaly, you can watch Films and Tv Shows."
             }
         };
-        public static readonly Account[] Accounts = new Account[]
+        public Account[] Accounts => new Account[]
         {
             new Account
             {
@@ -61,10 +67,10 @@ namespace GuiFlix_Repositories.Data
                 Email="guillaume@exemlpe.com",
                 Phone="0607080910",
                 IsBanned=false,
-                Password="PAss00++"
+                Password=_cryptPasswordService.EncryptPassword("PAss00++")
             }
         };
-        public static readonly Profile[] Profiles = new Profile[]
+        public Profile[] Profiles => new Profile[]
         {
             new Profile
             {
@@ -74,7 +80,7 @@ namespace GuiFlix_Repositories.Data
                 AvatarLink="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
             }
         };
-        public static readonly Film[] Films = new Film[]
+        public Film[] Films => new Film[]
         {
             new Film
             {
@@ -83,12 +89,12 @@ namespace GuiFlix_Repositories.Data
                 Pegi=Media.PegiTypes.ALL,
                 RealeaseDate=new DateTime(2008,1,1),
                 Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                ThumbnailLink="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/220px-Big_buck_bunny_poster_big.jpg",
+                ThumbnailLink="https://peach.blender.org/wp-content/uploads/bbb-splash.png",
                 Duration= new TimeSpan(0,10,35),
                 SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
             }
         };
-        public static readonly TVShow[] TVShows = new TVShow[]
+        public TVShow[] TVShows => new TVShow[]
         {
             new TVShow
             {
@@ -97,10 +103,10 @@ namespace GuiFlix_Repositories.Data
                 Pegi=Media.PegiTypes.ALL,
                 RealeaseDate=new DateTime(2008,1,1),
                 Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                ThumbnailLink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPQO_zVUkEEhnaW9sebyVmXW8-jGgjPh2Yw&usqp=CAU"
+                ThumbnailLink="https://www.embedded-france.org/wp-content/uploads/2013/04/big_buck_bunny_2008_11.jpg"
             }
         };
-        public static readonly Episode[] Episodes = new Episode[]
+        public Episode[] Episodes => new Episode[]
         {
             new Episode
             {
@@ -110,12 +116,12 @@ namespace GuiFlix_Repositories.Data
                 EpisodeNumber=1,
                 Name ="Big Buck Bunny",
                 Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                ThumbnailLink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLR4POz5A0cyaupJwOVd7aLggs4GhP_qugkg&usqp=CAU",
+                ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
                 Duration= new TimeSpan(0,10,35),
                 SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
             }
         };
-        public static readonly Category[] Categories = new Category[]
+        public Category[] Categories => new Category[]
         {
             new Category
             {
@@ -128,7 +134,7 @@ namespace GuiFlix_Repositories.Data
                 Name="Kids"
             }
         };
-        public static readonly object[] CategoryMedia = new object[]
+        public object[] CategoryMedia => new object[]
         {
             new 
             {
@@ -151,7 +157,7 @@ namespace GuiFlix_Repositories.Data
                 MediasId = 2,
             }
         };
-        public static readonly CrewMember[] CrewMembers = new CrewMember[]
+        public CrewMember[] CrewMembers => new CrewMember[]
         {
             new CrewMember
             {
@@ -160,7 +166,7 @@ namespace GuiFlix_Repositories.Data
                 LastName="Goedegebure"
             }
         };
-        public static readonly MediaCrewMember[] MediaCrewMember = new MediaCrewMember[]
+        public MediaCrewMember[] MediaCrewMember => new MediaCrewMember[]
         {
             new MediaCrewMember
             {
@@ -177,7 +183,7 @@ namespace GuiFlix_Repositories.Data
                 Role="Realisator"
             }
         };
-        public static readonly List[] Lists = new List[]
+        public List[] Lists => new List[]
         {
             new List
             {
@@ -186,7 +192,7 @@ namespace GuiFlix_Repositories.Data
                 ProfileId=1,
             }
         };
-        public static readonly object[] ListMedia = new object[]
+        public object[] ListMedia => new object[]
         {
             new
             {
@@ -199,7 +205,7 @@ namespace GuiFlix_Repositories.Data
                 MediasId = 2
             }
         };
-        public static readonly Like[] Likes = new Like[]
+        public Like[] Likes => new Like[]
         {
             new Like
             {
