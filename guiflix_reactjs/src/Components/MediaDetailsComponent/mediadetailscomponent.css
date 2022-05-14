@@ -1,6 +1,10 @@
 .mediaDetails{
-    height: 80vh;
+    top: 5%;
+    left: 10%;
+    height: 90vh;
     width: 80vw;
-    background-color: red;
+    background-color: rgba(48,48,48,255);
     position: fixed;
+    z-index: 1;
+    border-radius: 15px;
 }

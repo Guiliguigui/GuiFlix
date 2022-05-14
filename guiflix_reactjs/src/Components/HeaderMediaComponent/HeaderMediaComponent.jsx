@@ -22,15 +22,13 @@ export default function HeaderMediaComponent(props) {
                 <div className="descriptionHeaderMedia">
                     {randomMedia[0].description}
                 </div>
-                <button onClick={props.showDetails(randomMedia[0])}>Lire la suite...</button>
+                <button className="buttonSuite" onClick={(e)=>{props.showDetails(randomMedia[0].id)}}>Lire la suite...</button>
             </div>
         )
     }
     return (
         <div className="headerMedia" id="backHeader">
-            <div>
                 {isLoading ? <LoaderComponent /> : showHeader()}
-            </div>
         </div>
     )
 }
