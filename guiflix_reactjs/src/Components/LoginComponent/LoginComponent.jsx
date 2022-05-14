@@ -12,7 +12,7 @@ export default function LoginComponent() {
 
     const validate = () => {
         post('Authentication/User/Login', {
-            email,password
+            email, password
         })
 
     };
@@ -37,13 +37,13 @@ export default function LoginComponent() {
                                             <h5 className="fw-normal mb-3 pb-3" >Sign In</h5>
 
                                             <div className="form-outline mb-4">
-                                                <input type="email" id="form2Example17" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)}>Email address</label>
+                                                <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example17" >Email address</label>
                                             </div>
 
                                             <div className="form-outline mb-4">
-                                                <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value)}>Password</label>
+                                                <input type="password" id="form2Example27" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" >Password</label>
                                             </div>
 
                                             <div className="pt-1 mb-4">

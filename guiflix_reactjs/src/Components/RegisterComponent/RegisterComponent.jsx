@@ -17,11 +17,11 @@ export default function RegisterComponent() {
     const validHasMiniMaxChars = new RegExp(".{8,15}");
     const validHasLowerChar = new RegExp("[a-z]{2}");
     const validHasSymbols = new RegExp("[!@#$%^&*()_+=\\[{\\]};:<>|./?,-]{2}");
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [phone, setPhone] = useState("");
 
 
     const [fragmentError, setFragmentError] = useState(<></>);
@@ -89,24 +89,24 @@ export default function RegisterComponent() {
                                         <form>
                                             <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
                                             <div className="form-outline mb-4">
-                                                <input type="email" id="form2Example17" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)}>Email address</label>
+                                                <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example17" >Email address</label>
                                             </div>
                                             <div className="form-outline mb-4">
-                                                <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)}>Password</label>
+                                                <input type="password" id="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" >Password</label>
                                             </div>
                                             <div className="form-outline mb-4">
-                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" value={lastName} onChange={(e) => setLastName(e.target.value)}>Last Name</label>
+                                                <input type="text" id="form2Example27" value={lastName} onChange={(e) => setLastName(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" >Last Name</label>
                                             </div>
                                             <div className="form-outline mb-4">
-                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" value={firstName} onChange={(e) => setFirstName(e.target.value)}>First Name</label>
+                                                <input type="text" id="form2Example27" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" >First Name</label>
                                             </div>
                                             <div className="form-outline mb-4">
-                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)}>Phone</label>
+                                                <input type="text" id="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)} className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" >Phone</label>
                                             </div>
                                             <div className="pt-1 mb-4">
                                                 <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign Up</button>
