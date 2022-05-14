@@ -35,20 +35,22 @@ export default function RegisterComponent() {
         if (!validPassword.test(password)) {
             errrorlist.push(<p className="text-danger">Password should not be empty</p>)
         }
-        if (!validHasNumber.test(password)) {
-            errrorlist.push(<p className="text-danger">Password should contain At least two numeric values</p>)
-        }
-        if (!validHasUpperChar.test(password)) {
-            errrorlist.push(<p className="text-danger">Password should contain At least two upper case letters</p>)
-        }
-        if (!validHasMiniMaxChars.test(password)) {
-            errrorlist.push(<p className="text-danger">Password should not be less than 8 characters and greater than 15 characters</p>)
-        }
-        if (!validHasLowerChar.test(password)) {
-            errrorlist.push(<p className="text-danger">Password should contain At least two lower case letters</p>)
-        }
-        if (!validHasSymbols.test(password)) {
-            errrorlist.push(<p className="text-danger">Password should contain At least two special case characters</p>)
+        else {
+            if (!validHasNumber.test(password)) {
+                errrorlist.push(<p className="text-danger">Password should contain At least two numeric values</p>)
+            }
+            if (!validHasUpperChar.test(password)) {
+                errrorlist.push(<p className="text-danger">Password should contain At least two upper case letters</p>)
+            }
+            if (!validHasMiniMaxChars.test(password)) {
+                errrorlist.push(<p className="text-danger">Password should not be less than 8 characters and greater than 15 characters</p>)
+            }
+            if (!validHasLowerChar.test(password)) {
+                errrorlist.push(<p className="text-danger">Password should contain At least two lower case letters</p>)
+            }
+            if (!validHasSymbols.test(password)) {
+                errrorlist.push(<p className="text-danger">Password should contain At least two special case characters</p>)
+            }
         }
         if (!validLastName.test(lastName)) {
             errrorlist.push(<p className="text-danger">Your LastName is invalid</p>)
@@ -61,9 +63,9 @@ export default function RegisterComponent() {
         }
         setFragmentError(
             <>
-                {errrorlist.map((e) => {
+                {errrorlist.map((e,index) => {
                     return (
-                        e
+                        <div key={index}>{e}</div>
                     )
                 })}
             </>
@@ -72,7 +74,7 @@ export default function RegisterComponent() {
     return (
         <div className="registerview">
             <section className="vh-100">
-                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                <div className="col-md-6 col-lg-5 d-flex d-md-block">
                     <Link to="/">
                         <img src={Logo}
                             alt="GuiFlix_Logo" className="logo" />
@@ -80,41 +82,39 @@ export default function RegisterComponent() {
                 </div>
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col col-xl-10">
-                            <div className="cardBord"  >
-                                <div className="row g-0">
-                                    <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                        <div className="card-body p-8 p-lg-7 text-white">
-                                            <form>
-                                                <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
-                                                <div className="form-outline mb-4">
-                                                    <input type="email" id="form2Example17" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)}>Email address</label>
-                                                </div>
-                                                <div className="form-outline mb-4">
-                                                    <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)}>Password</label>
-                                                </div>
-                                                <div className="form-outline mb-4">
-                                                    <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example27" value={lastName} onChange={(e) => setLastName(e.target.value)}>Last Name</label>
-                                                </div>
-                                                <div className="form-outline mb-4">
-                                                    <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example27" value={firstName} onChange={(e) => setFirstName(e.target.value)}>First Name</label>
-                                                </div>
-                                                <div className="form-outline mb-4">
-                                                    <input type="password" id="form2Example27" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)}>Phone</label>
-                                                </div>
-                                                <div className="pt-1 mb-4">
-                                                    <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign Up</button>
-                                                </div>
-                                                <a href="#!" className="small text-muted">Terms of use.</a>
-                                                <a href="#!" className="small text-muted">Privacy policy</a>
-                                            </form>
-                                            {fragmentError}
-                                        </div>
+                        <div className="col-6 col-lg-10 ">
+                            <div className="cardBord d-flex justify-content-center align-items-center"  >
+                                <div className="col-md-6 col-lg-15 d-flex align-items-center">
+                                    <div className="card-body p-8 p-lg-10 text-white">
+                                        <form>
+                                            <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
+                                            <div className="form-outline mb-4">
+                                                <input type="email" id="form2Example17" className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)}>Email address</label>
+                                            </div>
+                                            <div className="form-outline mb-4">
+                                                <input type="password" id="form2Example27" className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)}>Password</label>
+                                            </div>
+                                            <div className="form-outline mb-4">
+                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" value={lastName} onChange={(e) => setLastName(e.target.value)}>Last Name</label>
+                                            </div>
+                                            <div className="form-outline mb-4">
+                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" value={firstName} onChange={(e) => setFirstName(e.target.value)}>First Name</label>
+                                            </div>
+                                            <div className="form-outline mb-4">
+                                                <input type="text" id="form2Example27" className="form-control form-control-lg" />
+                                                <label className="form-label" htmlFor="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)}>Phone</label>
+                                            </div>
+                                            <div className="pt-1 mb-4">
+                                                <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign Up</button>
+                                            </div>
+                                            <a href="#!" className="small text-muted">Terms of use.</a>
+                                            <a href="#!" className="small text-muted">Privacy policy</a>
+                                        </form>
+                                        {fragmentError}
                                     </div>
                                 </div>
                             </div>
