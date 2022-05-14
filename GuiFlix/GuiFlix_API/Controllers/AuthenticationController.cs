@@ -32,7 +32,7 @@ namespace GuiFlix_API.Controllers
             _aPISettings = options.Value;
         }
 
-        [HttpPost("/User/[action]")]
+        [HttpPost("/User/Register")]
         public async Task<ActionResult<RegisterResponseUserDTO>> RegisterUser([FromBody] RegisterRequestUserDTO request)
         {
             if (request == null || !ModelState.IsValid)
@@ -70,12 +70,12 @@ namespace GuiFlix_API.Controllers
             };
         }
 
-        [HttpPost("/User/[action]")]
+        [HttpPost("/User/Login")]
         public async Task<ActionResult<LoginResponseUserDTO>> LoginUser([FromBody] LoginRequestUserDTO request)
         {
             if (request == null || !ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest(ModelState);
             }
 
             request.Password = _cryptPasswordService.EncryptPassword(request.Password);
@@ -111,17 +111,17 @@ namespace GuiFlix_API.Controllers
             };
         }
 
-        [HttpPost("/Admin/[action]")]
+        [HttpPost("/Admin/Login")]
         public async Task<ActionResult<LoginResponseAdminDTO>> LoginAdmin([FromBody] LoginRequestAdminDTO request)
         {
             if (request == null || !ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest(ModelState);
             }
 
             request.Password = _cryptPasswordService.EncryptPassword(request.Password);
 
-            Admin? admin = await _adminRepository.Find(u => u.UserName == request.Email && u.Password == request.Password);
+            Admin? admin = await _adminRepository.Find(u => u.UserName == request.UserName && u.Password == request.Password);
 
             if (admin != null)
             {
