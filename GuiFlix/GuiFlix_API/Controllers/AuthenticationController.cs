@@ -19,9 +19,9 @@ namespace GuiFlix_API.Controllers
     [ApiController]
     public class AuthenticationController : Controller
     {
-        private IRepository<Account> _accountRepository;
-        private IRepository<Admin> _adminRepository;
-        private ICryptPasswordService _cryptPasswordService;
+        private readonly IRepository<Account> _accountRepository;
+        private readonly IRepository<Admin> _adminRepository;
+        private readonly ICryptPasswordService _cryptPasswordService;
         private readonly APISettings _aPISettings;
         public AuthenticationController(IRepository<Account> accountRepository,
             IRepository<Admin> adminRepository,
@@ -102,14 +102,15 @@ namespace GuiFlix_API.Controllers
                 return new LoginResponseUserDTO()
                 {
                     IsAuthSuccessful = true,
-                    Token = token
+                    Token = token,
+                    Account = account
                 };
             }
 
             return new LoginResponseUserDTO()
             {
                 IsAuthSuccessful = false,
-                ErrorMessage = "Invalid Authentication"
+                ErrorMessage = account == null ? "Invalid Email or Password" : "Account have been banned"
             };
         }
 

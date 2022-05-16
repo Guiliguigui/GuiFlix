@@ -17,14 +17,14 @@ namespace GuiFlix_Repositories.Repositories
         {
             return await _db.Profiles.Include(e => e.Likes)
                 .Include(e => e.Lists)
-                //.ThenInclude(l => l.Medias)
+                .ThenInclude(l => l.Medias)
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
         public override async Task<Profile> Find(Expression<Func<Profile, bool>> predicate)
         {
             return await _db.Profiles.Include(e => e.Likes)
                 .Include(e => e.Lists)
-                //.ThenInclude(l => l.Medias)
+                .ThenInclude(l => l.Medias)
                 .FirstOrDefaultAsync(predicate);
         }
     }

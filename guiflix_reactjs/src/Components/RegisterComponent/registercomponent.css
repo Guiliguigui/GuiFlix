@@ -11,3 +11,8 @@
     padding: 25px;
     width:75;
 }
+
+.mymodal .modal-content {
+    background-color: black;
+    
+}
