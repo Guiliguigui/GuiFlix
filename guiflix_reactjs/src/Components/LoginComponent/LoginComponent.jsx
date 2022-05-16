@@ -1,67 +1,76 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./logincomponent.css";
-import Logo from "../../Assets/LogoGuiFlix.png";
 import { post } from "../../Service/Service";
+import { Modal, Button } from "react-bootstrap";
 
+// token dans localstorage account dans le redux state
 
 export default function LoginComponent() {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showModal, setShowModal] = useState(false);
+    const [modalErrorMessage, setModalErrorMessage] = useState('Input Empty');
+    const navigate = useNavigate();
+
 
     const validate = () => {
         post('Authentication/User/Login', {
             email, password
-        })
-
-    };
-
+        }).then(
+            res => {
+                if (res.data.isAuthSuccessful) {
+                    localStorage.setItem("GuiFlix_JWT", res.data.token)
+                    localStorage.setItem("GuiFlix_Account", res.data.account)
+                    navigate("/profile")
+                }
+                else {
+                    setShowModal(true)
+                    setModalErrorMessage(res.data.errorMessage)
+                }
+            })
+    }
 
     return (
-        <div className="loginview">
-            <section className="vh-100">
-                <div className="col-md-6 col-lg-5 d-flex d-md-block">
-                    <Link to="/">
-                        <img src={Logo}
-                            alt="GuiFlix_Logo" className="logo" />
-                    </Link>
-                </div>
-                <div className="container py-5 h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-6 col-lg-10 ">
-                            <div className="cardBord d-flex justify-content-center align-items-center"  >
-                                <div className="col-md-6 col-lg-15 d-flex align-items-center">
-                                    <div className="card-body p-8 p-lg-10 text-white">
-                                        <form>
-                                            <h5 className="fw-normal mb-3 pb-3" >Sign In</h5>
+        <>
+            <div className="cardBord d-flex justify-content-center align-items-center"  >
+                <div className="col-md-6 col-lg-15 d-flex align-items-center">
+                    <div className="card-body p-8 p-lg-10 text-white">
+                        <form>
+                            <h5 className="fw-normal mb-3 pb-3" >Sign In</h5>
 
-                                            <div className="form-outline mb-4">
-                                                <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example17" >Email address</label>
-                                            </div>
-
-                                            <div className="form-outline mb-4">
-                                                <input type="password" id="form2Example27" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form2Example27" >Password</label>
-                                            </div>
-
-                                            <div className="pt-1 mb-4">
-                                                <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Login</button>
-                                            </div>
-                                            <a className="small text-muted" href="#!">Forgot password?</a>
-                                            <p className="mb-5 pb-lg-2" >New on GuiFlix ? <Link className="small text-muted" to="/register">Register Here</Link></p>
-                                            <a href="#!" className="small text-muted">Terms of use.</a>
-                                            <a href="#!" className="small text-muted">Privacy policy</a>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div className="form-outline mb-4">
+                                <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email-Address' className="form-control bg-dark form-control-lg" />
                             </div>
-                        </div>
+
+                            <div className="form-outline mb-4">
+                                <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} className="form-control form-control-lg bg-dark" />
+                            </div>
+
+                            <div className="pt-7 mb-4">
+                                <button className="btn btn-danger btn-block btn-lg flex-fill" type="button" onClick={validate}>Sign In</button>
+                            </div>
+                            <div className='d-flex flex-column bd-highlight mb-3'>
+                                <p className="mb-0 p-2 text-muted bd-highlight" >New on GuiFlix ? <Link className="link-light" to="/register">Register Here</Link></p>
+                                <a className="small text-muted p-2 bd-highlight" href="#!">Forgot password?</a><br />
+                                <a href="#!" className="small text-muted p-2 bd-highlight">Terms of use.</a>
+                                <a href="#!" className="small text-muted p-2 bd-highlight">Privacy policy</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+            <Modal className="mymodal text-white" show={showModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Registeration Error</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >{modalErrorMessage}
+                    <Button variant="danger" onClick={(e) => setShowModal(false)}>
+                        Close
+                    </Button>
+                </Modal.Body>
+            </Modal>
+        </>
     );
 }
 
