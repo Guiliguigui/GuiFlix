@@ -110,7 +110,7 @@ namespace GuiFlix_API.Controllers
             return new LoginResponseUserDTO()
             {
                 IsAuthSuccessful = false,
-                ErrorMessage = "Invalid Authentication"
+                ErrorMessage = account == null ? "Invalid Email or Password" : "Account have been banned"
             };
         }
 
