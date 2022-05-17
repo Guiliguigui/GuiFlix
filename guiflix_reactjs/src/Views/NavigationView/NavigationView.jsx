@@ -12,6 +12,7 @@ export default function NavigationView() {
     const [isDetails, setIsDetails] = useState(false);
     const [isHeaderLoading, setIsHeaderLoading] = useState(true);
 
+
     useEffect(()=>{
         isDetails? document.getElementById("blurDiv").style.filter = "blur(7px)" : document.getElementById("blurDiv").style.filter = "blur(0)"
     },[isDetails])
@@ -27,6 +28,7 @@ export default function NavigationView() {
             setIsDetails(true);
         })
     }
+    
     return (
         <div id="navigationView">
             <div id="blurDiv">

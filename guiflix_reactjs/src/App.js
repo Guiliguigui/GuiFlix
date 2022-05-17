@@ -10,6 +10,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FAQView from './Views/FAQView/FAQView';
 import {useState } from 'react';
+import VideoPlayerView from './Views/VideoPlayerView/VideoPlayerView';
 
 function App() {
   const [account, setAccount] = useState({});
@@ -60,6 +61,15 @@ function App() {
               profileSelected={profileSelected}
               setProfileSelected={setProfileSelected}
               content={<NavigationView mediaType="TVShow" />} 
+            />} 
+          />
+          <Route path="/player" element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<VideoPlayerView />} 
             />} 
           />
           {/* <Route path="/news"  element={

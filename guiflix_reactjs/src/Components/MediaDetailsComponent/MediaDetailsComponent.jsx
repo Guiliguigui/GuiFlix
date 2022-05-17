@@ -4,10 +4,12 @@ import { faXmark,faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { get } from "../../Service/Service";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function MediaDetailsComponent(props) {
 const [media,setMedia] = useState([]);
 const [isLoading,setIsLoading] = useState(true);
+const navigate = useNavigate();
 useEffect(()=>{
     get("Media/"+props.mediaId).then((res)=>{
         setMedia(res.data);
@@ -17,7 +19,9 @@ useEffect(()=>{
     const close=()=>{
         props.setIsDetails(false);
     }
-    
+    const goToPlayer=()=>{
+        navigate("/player",{state:media});
+    }
     return (
         isLoading? <LoaderComponent/> :
     <div className="mediaDetails">
@@ -32,7 +36,7 @@ useEffect(()=>{
             })}
             </div>
             <div className="bottomDetails">
-                <button className="buttonPlay"><FontAwesomeIcon icon={faPlayCircle}/></button>
+                <button className="buttonPlay" onClick={goToPlayer}><FontAwesomeIcon icon={faPlayCircle}/></button>
                 <div className="durationMedia">{media.duration}</div>
                 </div>
             

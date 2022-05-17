@@ -1,0 +1,33 @@
+.videoPlayer{
+    background-color: black;
+}
+
+.buttonBack{
+    background:none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    position: absolute;
+    left:3%;
+}
+.buttonBack:hover{
+    transform: scale(1.2);
+    color: red;
+}
+.titlePlayer{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 3%;
+    margin: 0 auto;
+}
+.player{
+   width: 80%; 
+}
+.descriptionPlayer{
+    display: flex;
+    text-align:  left;
+    font-size: 20px;
+    color: white;
+    padding: 3vh 5vw;
+}
