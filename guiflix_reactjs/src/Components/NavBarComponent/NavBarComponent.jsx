@@ -2,6 +2,8 @@ import React from 'react';
 import Logo from '../../Assets/LogoGuiFlix.png';
 import Icon from '../../Assets/GuiFlixIcon.png';
 import { Link } from 'react-router-dom';
+import { faM, faS,faN } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './navbarcomponent.css';
 
 export default function NavBarComponent() {
@@ -16,9 +18,9 @@ export default function NavBarComponent() {
         </div>
         <div className="smallScreen">
             <Link to="/"  ><img src={Icon} className="p-2" alt="LogoGuiFlix" width={40} /></Link>
-            <Link className="linkNavBar" to="/movies" title='Movies'>M</Link>
-            <Link className="linkNavBar" to="/shows" title='Shows'>S</Link>
-            <Link className="linkNavBar" to="/news" title='News'>N</Link>
+            <Link className="linkNavBar" to="/movies" title='Movies'><FontAwesomeIcon icon={faM}/></Link>
+            <Link className="linkNavBar" to="/shows" title='Shows'><FontAwesomeIcon icon={faS}/></Link>
+            <Link className="linkNavBar" to="/news" title='News'><FontAwesomeIcon icon={faN}/></Link>
         </div>
     </div>
     );
