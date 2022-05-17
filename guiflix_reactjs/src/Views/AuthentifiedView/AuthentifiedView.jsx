@@ -14,7 +14,6 @@ export default function AuthentifiedView(props) {
 
     const [isAuthentified, setIsauthentified] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    //const setAccount2 = (account) => props.setAccount(account);
 
     useEffect(() => {
         const JWT = localStorage.getItem("GuiFlix_JWT");
