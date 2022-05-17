@@ -9,29 +9,43 @@ import LoaderComponent from '../../Components/LoaderComponent/LoaderComponent';
 export default function VideoPlayerView() {
     const location = useLocation();
     const navigate = useNavigate();
-    const [isLoading,setIsLoading] = useState(true)
-    useEffect(()=>{
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
         setIsLoading(false)
-    },[])
+    }, [])
 
     const goBack = () => {
         navigate("/navigation");
     }
 
-
-    return (
-        <div className='videoPlayer'>
-            <button className="buttonBack" onClick={goBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
-            <div className='titlePlayer'>{location.state.name}</div>
-            <video controls className='player'><source id='video' /></video>
-            <div className='descriptionPlayer'>{location.state.description}</div>
-            <div className='episodesList'>
-                {isLoading? <LoaderComponent/> : location.state.type === "Film"? document.getElementById("video").src = location.state.sourceLink : location.state.episodes.map((episode,index)=>{
-                    return(
-                        <EpisodeComponent key={index} episode={episode}/>
-                    )
-                }) }
+    if (isLoading) {
+        return (<LoaderComponent />)
+    }
+    else if (location.state.type === 'Film') {
+        return (
+            <div className='videoPlayer'>
+                <button className="buttonBack" onClick={goBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
+                <div className='titlePlayer'>{location.state.name}</div>
+                <video controls className='player'><source src={location.state.sourceLink} /></video>
+                <div className='descriptionPlayer'>{location.state.description}</div>
             </div>
-        </div>
-    )
+        )
+    }
+    else {
+        return (
+            <div className='videoPlayer'>
+                <button className="buttonBack" onClick={goBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
+                <div className='titlePlayer'>{location.state.name}</div>
+                <video controls className='player'><source src={location.state.sourceLink} /></video>
+                <div className='descriptionPlayer'>{location.state.description}</div>
+                <div className='episodesList'>
+                    {location.state.episodes.map((episode, index) => {
+                        return (
+                            <EpisodeComponent key={index} episode={episode} />
+                        )
+                    })}
+                </div>
+            </div>
+        )
+    }
 }

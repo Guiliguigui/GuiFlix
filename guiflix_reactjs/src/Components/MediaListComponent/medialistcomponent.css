@@ -12,22 +12,26 @@
 }
 
 .contentCarousel {
+    width: 90%;
+    margin: auto;
     display: flex;
     height: 250px;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .mediaCarousel {
     display: flex;
     overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.5s;
 }
 
 .mediaCard {
-    flex-shrink: 0;
     overflow: hidden;
     display: flex;
     width: 350px;
-    margin: 0 0.5vw;
+    margin: 0 5px;
     border-radius: 15px;
     position: relative;
     background-repeat: no-repeat;
@@ -41,7 +45,10 @@
     cursor: pointer;
 }
 
-.buttonCarousel {
+.buttonPrevCarousel {
+    position: absolute;
+    left: 5%;
+    top: 50%;
     background: none;
     color: white;
     font-size: 40px;
@@ -49,7 +56,20 @@
     border: none;
 }
 
-.buttonCarousel:hover {
+.buttonPrevCarousel:hover {
+    transform: scale(1.4);
+}
+.buttonNextCarousel {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    background: none;
+    color: white;
+    font-size: 40px;
+    padding: 6px;
+    border: none;
+}
+.buttonNextCarousel:hover {
     transform: scale(1.4);
 }
 
