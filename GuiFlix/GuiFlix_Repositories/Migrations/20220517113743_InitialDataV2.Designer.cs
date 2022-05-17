@@ -4,14 +4,16 @@ using GuiFlix_Repositories.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuiFlix_Repositories.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220517113743_InitialDataV2")]
+    partial class InitialDataV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -889,14 +891,14 @@ namespace GuiFlix_Repositories.Migrations
                         {
                             Id = 2,
                             AccountId = 1,
-                            AvatarLink = "https://archive.org/download/profiles_202104/hero.png",
+                            AvatarLink = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.redbubble.com%2Fpeople%2Fnorbert-sloth%2Fworks%2F33251083-2018-netflix-chicken-profile-icon&psig=AOvVaw2idUgiqVT6YI-P2Y6CSH1t&ust=1652860050220000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIDl1dOF5vcCFQAAAAAdAAAAABAD",
                             UserName = "YoYo"
                         },
                         new
                         {
                             Id = 3,
                             AccountId = 1,
-                            AvatarLink = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/bf6e4a33850498.56ba69ac3064f.png",
+                            AvatarLink = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.redbubble.com%2Fpeople%2Fnorbert-sloth%2Fworks%2F33250853-netflix-2018-superhero-profile-ion&psig=AOvVaw2idUgiqVT6YI-P2Y6CSH1t&ust=1652860050220000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIDl1dOF5vcCFQAAAAAdAAAAABAJ",
                             UserName = "RoRo"
                         });
                 });
@@ -1007,6 +1009,17 @@ namespace GuiFlix_Repositories.Migrations
                         },
                         new
                         {
+                            Id = 36,
+                            Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+                            Name = "Avengers",
+                            Pegi = 2,
+                            RealeaseDate = new DateTime(2012, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ThumbnailLink = "https://www.telez.fr/content/uploads/2019/04/avengers-1-1280x720.jpg",
+                            Duration = new TimeSpan(0, 0, 10, 35, 0),
+                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
+                        },
+                        new
+                        {
                             Id = 3,
                             Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
                             Name = "Rampage: Out of Control",
@@ -1108,7 +1121,7 @@ namespace GuiFlix_Repositories.Migrations
                         {
                             Id = 12,
                             Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-                            Name = "The Simpson's: The Movies",
+                            Name = "The Simpson's",
                             Pegi = 0,
                             RealeaseDate = new DateTime(2010, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ThumbnailLink = "https://media.gqmagazine.fr/photos/5eb165192bfbee9eb2f42e42/master/pass/los-simpson-cuarto-oculto.jpg",
@@ -1265,7 +1278,7 @@ namespace GuiFlix_Repositories.Migrations
                             Name = "Mister Babaddook",
                             Pegi = 3,
                             RealeaseDate = new DateTime(2014, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://catholicgirlbloggin.files.wordpress.com/2015/07/23babadook2-articlelarge.jpg",
+                            ThumbnailLink = "https://www.filmmusicsite.com/fr/images/covers/xlarge/58175-inlay.jpg",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         },
@@ -1365,17 +1378,6 @@ namespace GuiFlix_Repositories.Migrations
                             Pegi = 0,
                             RealeaseDate = new DateTime(2014, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ThumbnailLink = "https://img-31.ccm2.net/VXvUmaJweeWRShVXxn2cwrskiY8=/1240x/smart/8effb5b443a6483eaed2a8f886b037e3/ccmcms-hugo/10759516.jpg",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-                            Name = "Avengers",
-                            Pegi = 2,
-                            RealeaseDate = new DateTime(2012, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://www.telez.fr/content/uploads/2019/04/avengers-1-1280x720.jpg",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         });
