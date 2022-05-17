@@ -1,34 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { get } from '../../Service/Service';
-import LoaderComponent from "../LoaderComponent/LoaderComponent";
+import React, { useEffect } from "react";
 import './headermediacomponent.css';
 
 export default function HeaderMediaComponent(props) {
-    const [randomMedia, setRandomMedia] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        get("Media/Random?quantity=1").then((res) => {
-            setRandomMedia(res.data);
-            setIsLoading(false);
-        })
-    }, [])
-    const showHeader = () => {
-        document.getElementById("backHeader").style.backgroundImage = "url(" + randomMedia[0].thumbnailLink + ")";
-        return (
-            <div className="textHeaderMedia">
-                <div className="titleHeaderMedia">
-                    {randomMedia[0].name}
-                </div>
-                <div className="descriptionHeaderMedia">
-                    {randomMedia[0].description}
-                </div>
-                <button className="buttonSuite" onClick={(e)=>{props.showDetails(randomMedia[0].id)}}>Lire la suite...</button>
-            </div>
-        )
-    }
+    useEffect(()=>{
+        document.getElementById("backHeader").style.background = "linear-gradient(to right,rgba(0, 0, 0, 1),rgba(12, 12, 12, 0.2),rgba(0, 0, 0, 1)), url(" + props.randomMedia[0].thumbnailLink + ")";
+        document.getElementById("backHeader").style.height = "70vh";
+        document.getElementById("backHeader").style.backgroundRepeat = "no-repeat";
+        document.getElementById("backHeader").style.backgroundSize = "contain";
+        document.getElementById("backHeader").style.backgroundPosition = "center";
+        
+    })
     return (
         <div className="headerMedia" id="backHeader">
-                {isLoading ? <LoaderComponent /> : showHeader()}
+            <div className="textHeaderMedia">
+                <div className="titleHeaderMedia">
+                    {props.randomMedia[0].name}
+                </div>
+                <div className="descriptionHeaderMedia">
+                    {props.randomMedia[0].description}
+                </div>
+                <button className="buttonSuite" onClick={(e) => { props.showDetails(props.randomMedia[0].id) }}>Show More...</button>
+            </div>
         </div>
     )
 }

@@ -30,7 +30,7 @@
     .divText,.divLink1{
         display: none;
     }
-    .btn{
+    .btnHome{
         transform: scale(1.5);
         margin: 5vw;
     }

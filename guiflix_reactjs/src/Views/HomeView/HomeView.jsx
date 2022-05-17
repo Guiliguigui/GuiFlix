@@ -15,8 +15,8 @@ export default function HomeView() {
             <div className="fs-4">Ready to watch? Enter your email to create or restart your membership.</div>
         </div>
         <div className="divLink2">
-            <Link to="/login"><button className="btn btn-lg btn-danger me-5">Login</button></Link>
-            <Link to="/register"><button className="btn btn-lg btn-danger">Register</button></Link>
+            <Link to="/login"><button className="btnHome btn btn-lg btn-danger me-5">Login</button></Link>
+            <Link to="/register"><button className="btnHome btn btn-lg btn-danger">Register</button></Link>
         </div>
     </div>
     );

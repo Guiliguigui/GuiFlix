@@ -1,37 +1,40 @@
-.headerMedia{
-    background: linear-gradient(black,rgba(48,48,48,255),black);
+.headerMedia {
     display: flex;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 70vh;
 }
-.textHeaderMedia{
-    margin: 15vh 2vw 5vh 3vw;
+
+.textHeaderMedia {
+    margin: 35vh 2vw 5vh 3vw;
     display: flex;
     flex-direction: column;
     text-align: left;
     width: 40vw;
-    height: 20vh;
     text-shadow: 1px 1px 2px black;
     color: white;
-    
 }
-.descriptionHeaderMedia{
-    
-    font-size: 25px;
+
+.descriptionHeaderMedia {
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
-.titleHeaderMedia{
-font-size: 45px;
-font-weight: bold;
-margin-bottom: 1vh;
+
+.titleHeaderMedia {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 1vh;
 }
-.buttonSuite{
+
+.buttonSuite {
     background-color: white;
     color: black;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
     width: 10vw;
+    margin: 2vh 0;
+    padding: 1vh 1vw;
 }
