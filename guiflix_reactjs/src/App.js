@@ -9,8 +9,11 @@ import AuthentifiedView from './Views/AuthentifiedView/AuthentifiedView';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FAQView from './Views/FAQView/FAQView';
+import {useState } from 'react';
 
 function App() {
+  const [account, setAccount] = useState({});
+  const [profileSelected, setProfileSelected] = useState({});
   return (
     <div className="App">
       <BrowserRouter>
@@ -19,12 +22,55 @@ function App() {
           <Route path="/" element={<><HomeView /><FAQView /><FooterComponent /></>} />
           <Route path="/login" element={<><LoginView /><FooterComponent /></>} />
           <Route path="/register" element={<><RegisterView /><FooterComponent /></>} />
+
+
           {/* Authentified */}
-          <Route path="/navigation" element={<AuthentifiedView content={<NavigationView />} />} />
-          <Route path="/profile" element={<AuthentifiedView content={<ProfilesView />} />} />
-          <Route path="/film" element={<AuthentifiedView content={<NavigationView mediaType="Film" />} />} />
-          <Route path="/tvshow" element={<AuthentifiedView content={<NavigationView mediaType="TVShow" />} />} />
-          <Route path="/news" element={<AuthentifiedView content={<NavigationView />} />} />
+
+          <Route path="/profile" element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<ProfilesView />} 
+            />}
+          />
+          <Route path="/navigation" element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<NavigationView />} 
+            />} 
+          />
+          <Route path="/film" element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<NavigationView mediaType="Film" />} 
+            />} 
+          />
+          <Route path="/tvshow" element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<NavigationView mediaType="TVShow" />} 
+            />} 
+          />
+          {/* <Route path="/news"  element={
+            <AuthentifiedView 
+              account={account}  
+              setAccount={setAccount}
+              profileSelected={profileSelected}
+              setProfileSelected={setProfileSelected}
+              content={<NavigationView />} 
+            />} 
+          /> */}
 
         </Routes>
       </BrowserRouter>
