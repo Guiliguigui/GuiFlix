@@ -114,7 +114,55 @@ namespace GuiFlix_Repositories.Data
                 TVShowId=2,
                 Season="Part 1",
                 EpisodeNumber=1,
-                Name ="Big Buck Bunny",
+                Name ="Big Buck Bunny p1e1",
+                Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
+                ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
+                Duration= new TimeSpan(0,10,35),
+                SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
+            },
+            new Episode
+            {
+                Id = 2,
+                TVShowId=2,
+                Season="Part 1",
+                EpisodeNumber=1,
+                Name ="Big Buck Bunny p1e2",
+                Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
+                ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
+                Duration= new TimeSpan(0,10,35),
+                SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
+            },
+            new Episode
+            {
+                Id = 3,
+                TVShowId=2,
+                Season="Part 1",
+                EpisodeNumber=1,
+                Name ="Big Buck Bunny p1e3",
+                Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
+                ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
+                Duration= new TimeSpan(0,10,35),
+                SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
+            },
+            new Episode
+            {
+                Id = 4,
+                TVShowId=2,
+                Season="Partie 2!",
+                EpisodeNumber=1,
+                Name ="Big Buck Bunny p2e1",
+                Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
+                ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
+                Duration= new TimeSpan(0,10,35),
+                SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
+            },
+            new Episode
+            {
+                Id = 5,
+                TVShowId=2,
+                Season="Partie 2!",
+                EpisodeNumber=1,
+                Name ="Big Buck Bunny p1e2",
                 Description= "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
                 ThumbnailLink="https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg",
                 Duration= new TimeSpan(0,10,35),
@@ -132,6 +180,11 @@ namespace GuiFlix_Repositories.Data
             {
                 Id=2,
                 Name="Kids"
+            },
+            new Category
+            {
+                Id=3,
+                Name="Action"
             }
         };
         public object[] CategoryMedia => new object[]

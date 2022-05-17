@@ -12,6 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GuiFlix_API.Controllers
 {
@@ -112,6 +113,16 @@ namespace GuiFlix_API.Controllers
                 IsAuthSuccessful = false,
                 ErrorMessage = account == null ? "Invalid Email or Password" : "Account have been banned"
             };
+        }
+
+        [HttpPost("User/AccountJWT")]
+        [Authorize(Roles = Constants.RoleUserAccount)]
+        public async Task<ActionResult<Account>> GetAccountByJWT()
+        {
+            Account? account = await _accountRepository.Find(HttpContext.GetId());
+            if (account == null)
+                return NotFound();
+            return Ok(account);
         }
 
         [HttpPost("Admin/Login")]
