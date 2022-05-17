@@ -58,13 +58,12 @@ export default function LoginComponent() {
                             <div className="pt-7 mb-4">
                                 <button className="btn w-100 btn-danger btn-block btn-lg flex-fill" type="button" onClick={validate}>Sign In</button>
                             </div>
-                            <p className='p-2 text-start'>
-                            <p className="mb-0 push text-muted text-start" >New on GuiFlix ? <Link className="link-light" to="/register">Register Here</Link></p>
-                            
+                            <div className='p-2 text-start'>
+                                <p className="mb-0 push text-muted text-start" >New on GuiFlix ? <Link className="link-light" to="/register">Register Here</Link></p>
                                 <a className="small text-muted">Forgot password?</a><br />
                                 <a className="small text-muted">Terms of use.</a>
                                 <a className="small text-muted">Privacy policy</a>
-                            </p>
+                            </div>
                         </form>
                     </div>
                 </div>
