@@ -16,20 +16,15 @@ export default function RegisterComponent() {
     const validHasMiniMaxChars = new RegExp(".{8,15}");
     const validHasLowerChar = new RegExp("[a-z]{2}");
     const validHasSymbols = new RegExp("[!@#$%^&*()_+=\\[{\\]};:<>|./?,-]{2}");
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [lastName, setLastName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [phone, setPhone] = useState("");
-
     const [showModal, setShowModal] = useState(false);
     const [modalErrorMessage, setModalErrorMessage] = useState('');
-
     const [fragmentError, setFragmentError] = useState(<></>);
-
     const navigate = useNavigate();
-
 
     const validate = () => {
         let errorList = [];
@@ -88,42 +83,38 @@ export default function RegisterComponent() {
                     }
                 })
         }
-
     };
     return (
         <>
             <div className="cardBord d-flex justify-content-center align-items-center"  >
                 <div className="col-md-6 col-lg-15 d-flex align-items-center">
-                    <div className="card-body p-8 p-lg-10 text-white">
+                    <div className="card-body rounded p-8 p-lg-10 text-white">
                         <form>
-                            <h5 className="fw-normal mb-3 pb-3" >Sign Up</h5>
+                            <h3 className="fw-normal mb-5 text-start" >Sign Up</h3>
                             <div className="form-outline mb-4">
-                                <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form2Example17" >Email address</label>
+                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email-Address" className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
-                                <input type="password" id="form2Example27" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)} className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form2Example27" >Password</label>
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)} placeholder='Password' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
-                                <input type="text" id="form2Example27" value={lastName} onChange={(e) => setLastName(e.target.value)} className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form2Example27" >Last Name</label>
+                                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder='LastName' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
-                                <input type="text" id="form2Example27" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form2Example27" >First Name</label>
+                                <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder='FirstName' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
-                                <input type="text" id="form2Example27" value={phone} onChange={(e) => setPhone(e.target.value)} className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form2Example27" >Phone</label>
+                                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='PhoneNumber' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="pt-1 mb-4">
-                                <button className="btn btn-danger btn-lg btn-block" type="button" onClick={validate}>Sign Up</button>
+                                <button className="btn btn-danger btn-lg mybutton w-100" type="button" onClick={validate}>Sign Up</button>
                             </div>
-                            <a href="#!" className="small text-muted">Terms of use.</a>
-                            <a href="#!" className="small text-muted">Privacy policy</a>
+                            <p className="p-2 text-start">
+                                <a href="#!" className="small text-muted">Terms of use.</a>
+                                <a href="#!" className="small text-muted">Privacy policy</a>
+                            </p>
+                            {fragmentError}
                         </form>
-                        {fragmentError}
                     </div>
                 </div>
             </div>
