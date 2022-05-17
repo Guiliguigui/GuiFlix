@@ -25,3 +25,11 @@
         display: none;
     }
 }
+.navDisconnect{
+    cursor: pointer;
+    text-decoration: none;
+    color: brown;
+}
+.navProfiles{
+    color: lightseagreen;
+}
