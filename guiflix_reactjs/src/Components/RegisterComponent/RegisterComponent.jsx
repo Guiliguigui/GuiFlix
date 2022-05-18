@@ -75,12 +75,16 @@ export default function RegisterComponent() {
             }).then(
                 res => {
                     if (res.data.isRegisterationSuccessful) {
+                        prompt("Registeration Successfull","You're registeration is a success,\n Please Sign in to create your first profile","close")
                         navigate("/login")
                     }
                     else {
                         setShowModal(true)
                         setModalErrorMessage(res.data.errorMessage)
                     }
+                })
+                .catch(err => {
+                    setShowModal(true)
                 })
         }
     };
@@ -89,7 +93,7 @@ export default function RegisterComponent() {
             <div className="cardBord d-flex justify-content-center align-items-center"  >
                 <div className="col-md-6 col-lg-15 d-flex align-items-center">
                     <div className="card-body rounded p-8 p-lg-10 text-white">
-                        <form>
+                        <form onSubmit={(e)=>{validate(); e.preventDefault()}}>
                             <h3 className="fw-normal mb-5 text-start" >Sign Up</h3>
                             <div className="form-outline mb-4">
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email-Address" className="form-control form-control-lg text-light bg-dark" />
@@ -107,7 +111,7 @@ export default function RegisterComponent() {
                                 <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='PhoneNumber' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="pt-1 mb-4">
-                                <button className="btn btn-danger btn-lg mybutton w-100" type="button" onClick={validate}>Sign Up</button>
+                                <button className="btn btn-danger btn-lg mybutton w-100" type="submit">Sign Up</button>
                             </div>
                             <p className="p-2 text-start">
                                 <a href="#!" className="small text-muted">Terms of use.</a>
@@ -122,11 +126,14 @@ export default function RegisterComponent() {
                 <Modal.Header closeButton>
                     <Modal.Title>Registeration Error</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >{modalErrorMessage}
+                <Modal.Body >
+                    {modalErrorMessage}
+                </Modal.Body>
+                <Modal.Footer>
                     <Button variant="danger" onClick={(e) => setShowModal(false)}>
                         Close
                     </Button>
-                </Modal.Body>
+                </Modal.Footer>
             </Modal>
         </>
     );

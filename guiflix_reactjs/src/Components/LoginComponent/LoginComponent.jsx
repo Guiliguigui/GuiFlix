@@ -25,18 +25,23 @@ export default function LoginComponent() {
     }
 
     const validate = () => {
+        console.log("nimmememe")
         post('Authentication/User/Login', {
             email, password
-        }).then(
-            res => {
-                if (res.data.isAuthSuccessful) {
-                    localStorage.setItem("GuiFlix_JWT", res.data.token)
-                    navigate("/profile")
-                }
-                else {
-                    setShowModal(true)
-                    setModalErrorMessage(res.data.errorMessage)
-                }
+        })
+            .then(
+                res => {
+                    if (res.data.isAuthSuccessful) {
+                        localStorage.setItem("GuiFlix_JWT", res.data.token)
+                        navigate("/profile")
+                    }
+                    else {
+                        setShowModal(true)
+                        setModalErrorMessage(res.data.errorMessage)
+                    }
+                })
+            .catch(err => {
+                setShowModal(true)
             })
     }
     return (
@@ -44,7 +49,7 @@ export default function LoginComponent() {
             <div className="cardBord d-flex justify-content-center align-items-center rounded"  >
                 <div className="col-md-6 col-lg-15 d-flex align-items-center">
                     <div className="card-body rounded zp-8 p-lg-10 text-white mt-0">
-                        <form>
+                        <form onSubmit={(e)=>{validate(); e.preventDefault()}}>
                             <h3 className="fw-normal mb-5 text-start" >Sign In</h3>
                             <div className="form-outline mb-4">
                                 <input type="email" id="form2Example17" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email-Address' className="form-control text-light bg-dark form-control-lg" />
@@ -56,7 +61,7 @@ export default function LoginComponent() {
                                     </button> */}
                             </div>
                             <div className="pt-7 mb-4">
-                                <button className="btn w-100 btn-danger btn-block btn-lg flex-fill" type="button" onClick={validate}>Sign In</button>
+                                <button className="btn w-100 btn-danger btn-block btn-lg flex-fill" type="submit" >Sign In</button>
                             </div>
                             <div className='p-2 text-start'>
                                 <p className="mb-0 push text-muted text-start" >New on GuiFlix ? <Link className="link-light" to="/register">Register Here</Link></p>
@@ -70,13 +75,17 @@ export default function LoginComponent() {
             </div>
             <Modal className="mymodal text-white" show={showModal}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Registeration Error</Modal.Title>
+                    <Modal.Title>Login Error</Modal.Title>
                 </Modal.Header>
-                <Modal.Body >{modalErrorMessage}
+                <Modal.Body >
+                    {modalErrorMessage}
+
+                </Modal.Body>
+                <Modal.Footer>
                     <Button variant="danger" onClick={(e) => setShowModal(false)}>
                         Close
                     </Button>
-                </Modal.Body>
+                </Modal.Footer>
             </Modal>
         </>
     );
