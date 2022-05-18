@@ -5,21 +5,22 @@ import MediaDetailsComponent from "../../Components/MediaDetailsComponent/MediaD
 import MediaListComponent from "../../Components/MediaListComponent/MediaListComponent";
 import './navigationview.css';
 import LoaderComponent from "../../Components/LoaderComponent/LoaderComponent";
+import { v4 as uuidv4 } from 'uuid';
 
-export default function NavigationView() {
+export default function NavigationView(props) {
     const [randomMedia, setRandomMedia] = useState([]);
     const [media, setMedia] = useState([]);
     const [isDetails, setIsDetails] = useState(false);
     const [isHeaderLoading, setIsHeaderLoading] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
     const [category, setCategory] = useState([]);
-    const JWT = localStorage.getItem("GuiFlix_JWT");
-
-
+    
+    
     useEffect(() => {
         isDetails ? document.getElementById("blurDiv").style.filter = "blur(7px)" : document.getElementById("blurDiv").style.filter = "blur(0)"
     }, [isDetails])
     useEffect(() => {
+        const JWT = localStorage.getItem("GuiFlix_JWT");
         get("Media/Random?quantity=1", {
             headers: { Authorization: `Bearer ${JWT}` }
         }).then((res) => {
@@ -28,7 +29,7 @@ export default function NavigationView() {
         }).catch(err => {
             console.log(err.message)
         })
-        get("Category/Random?quantity=2", {
+        get("Category/Random?quantity=3", {
             headers: { Authorization: `Bearer ${JWT}` }
         }).then((res) => {
             setCategory(res.data);
@@ -42,21 +43,27 @@ export default function NavigationView() {
             setMedia(res.data);
             setIsDetails(true);
         })
+
     }
 
     return (
         <div id="navigationView">
             <div id="blurDiv">
                 {isHeaderLoading ? <LoaderComponent /> : <HeaderMediaComponent showDetails={showDetails} randomMedia={randomMedia} />}
-                {isLoading ? <LoaderComponent /> : category.map((category, index) => {
-                    return (
-                        <MediaListComponent key={index} medias={category.medias} nameCarousel={category.name} showDetails={showDetails} />
+                {
+                 props.profileSelected.lists.map((list)=>{
+                    return(
+                    <MediaListComponent key={uuidv4()} medias={list.medias} nameCarousel={list.name} showDetails={showDetails}/>
                     )
-
+                })}
+                {isLoading ? <LoaderComponent /> : category.map((category) => {
+                    return (
+                        <MediaListComponent key={uuidv4()} medias={category.medias} nameCarousel={category.name} showDetails={showDetails} />
+                    )
                 })}
             </div>
             {
-                isDetails ? <MediaDetailsComponent mediaId={media.id} setIsDetails={setIsDetails} /> : ""
+                isDetails ? <MediaDetailsComponent mediaId={media.id} setIsDetails={setIsDetails} profileSelected={props.profileSelected}/> : ""
             }
         </div>
     )

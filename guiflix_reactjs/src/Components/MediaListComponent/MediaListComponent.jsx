@@ -1,7 +1,8 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { get } from "../../Service/Service";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { v4 as uuidv4 } from 'uuid';
 import './medialistcomponent.css';
 
 export default function MediaListComponent(props) {
@@ -18,10 +19,18 @@ export default function MediaListComponent(props) {
             index--;
             document.getElementById(props.nameCarousel).style.transform = "translateX(-" + index * 360 + "px)"
         }
+        else {
+            index = props.medias.length - 1;
+            document.getElementById(props.nameCarousel).style.transform = "translateX(-" + index * 360 + "px)"
+        }
     }
     const goForward = () => {
         if (index < (props.medias.length - 1)) {
             index++;
+            document.getElementById(props.nameCarousel).style.transform = "translateX(-" + index * 360 + "px)"
+        }
+        else {
+            index = 0;
             document.getElementById(props.nameCarousel).style.transform = "translateX(-" + index * 360 + "px)"
         }
     }
@@ -36,10 +45,11 @@ export default function MediaListComponent(props) {
             <button className="buttonPrevCarousel" onClick={goBack}><FontAwesomeIcon icon={faAngleLeft} /></button>
             <div className="contentCarousel">
                 <div className="mediaCarousel" id={props.nameCarousel}>
-                    { props.medias.map((media, index) => {
+                    {props.medias.map((media, index) => {
+                        var UniqId = uuidv4();
                         return (
-                            <div onMouseEnter={(e) => { details(media.id) }} onMouseLeave={(e) => { hideDetails(media.id) }} className="mediaCard" style={{ backgroundImage: "url(" + media.thumbnailLink + ")" }} key={index}>
-                                <div onClick={(e) => { props.showDetails(media.id) }} className="detailsMedia" id={media.id}>{media.name}<br />Show more...</div>
+                            <div onMouseEnter={(e) => { details(UniqId) }} onMouseLeave={(e) => { hideDetails(UniqId) }} className="mediaCard" style={{ backgroundImage: "url(" + media.thumbnailLink + ")" }} key={index}>
+                                <div onClick={(e) => { props.showDetails(media.id) }} className="detailsMedia" id={UniqId}>{media.name}<br />Show more...</div>
                             </div>
                         )
                     })}

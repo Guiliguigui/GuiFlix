@@ -3,10 +3,9 @@ import './episodecomponent.css';
 
 export default function EpisodeComponent(props){
     return(
-    <div className="bg-danger">
-        Hello
+    <div className="episode">
+        <button onClick={this.props.changeEpisode(props.episode.sourceLink)}>V</button>
         {props.episode.episodeNumber}
-        {console.log(props)}
     </div>
     )
 }

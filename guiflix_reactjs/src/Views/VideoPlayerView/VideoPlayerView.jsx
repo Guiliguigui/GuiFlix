@@ -9,13 +9,19 @@ import LoaderComponent from '../../Components/LoaderComponent/LoaderComponent';
 export default function VideoPlayerView() {
     const location = useLocation();
     const navigate = useNavigate();
+    const [sourceLink,setSourceLink] = useState("");
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setIsLoading(false)
+        
     }, [])
 
     const goBack = () => {
         navigate("/navigation");
+    }
+    const changeEpisode= (link) =>{
+        document.getElementById("player").style.display = "";
+        setSourceLink(link)
     }
 
     if (isLoading) {
@@ -36,12 +42,12 @@ export default function VideoPlayerView() {
             <div className='videoPlayer'>
                 <button className="buttonBack" onClick={goBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
                 <div className='titlePlayer'>{location.state.name}</div>
-                <video controls className='player'><source src={location.state.sourceLink} /></video>
+                <video controls className='player' id="player" style={{display:"none"}}><source id="episodePlayer" src={sourceLink} /></video>
                 <div className='descriptionPlayer'>{location.state.description}</div>
                 <div className='episodesList'>
                     {location.state.episodes.map((episode, index) => {
                         return (
-                            <EpisodeComponent key={index} episode={episode} />
+                            <EpisodeComponent key={index} episode={episode} changeEpisode={changeEpisode} />
                         )
                     })}
                 </div>
