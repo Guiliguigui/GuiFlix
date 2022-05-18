@@ -4,7 +4,7 @@ import { faXmark, faPlayCircle, faCirclePlus } from "@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { get } from "../../Service/Service";
 import LoaderComponent from "../LoaderComponent/LoaderComponent";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import LikeComponent from "../LikesComponent/LikeComponent";
 import moment from 'moment';
 
@@ -27,8 +27,6 @@ export default function MediaDetailsComponent(props) {
     const pegiTypes = ["No Pegi", "Pegi 7",  "Pegi 13", "Pegi 16", "Pegi 18"]
     const pegi = pegiTypes[media.pegi]
     const date = new Date(media.realeaseDate)
-    console.log(date)
-    //const dateString = format(date, 'YYYY/MM/DD')
     
     return (
         isLoading ? <LoaderComponent /> :
@@ -40,11 +38,21 @@ export default function MediaDetailsComponent(props) {
                 <div className="contentDetails" style={{ backgroundImage: "url(" + media.thumbnailLink + ")" }}>
                     <div className="descriptionDetails">{media.description}</div>
                     <div className="crewMembersDetails">With: {media.crewMembers.map((crewMember, index) => {
-                        return (<span key={index}> {crewMember.crewMember.firstName} {crewMember.crewMember.lastName}&nbsp;</span>)
+                        return (
+                            <span key={index}> 
+                                <Link to={"crewMember/"+crewMember.crewMember.id} className="linkDetails">{crewMember.crewMember.firstName} {crewMember.crewMember.lastName}</Link>
+                                {index!=media.crewMembers.length-1?<>,&nbsp;</>:""}
+                            </span>
+                        )
                     })}
                     </div>
                     <div className="crewMembersDetails">Categories: {media.categories.map((category, index) => {
-                        return (<span key={index}> {category.name}&nbsp;</span>)
+                        return (
+                            <span key={index}> 
+                                <Link to={"category/"+category.id} className="linkDetails">{category.name}</Link>
+                                {index!=media.categories.length-1?<>,&nbsp;</>:""}
+                            </span>
+                        )
                     })}
                     </div>
                     <div className="bottomDetails">

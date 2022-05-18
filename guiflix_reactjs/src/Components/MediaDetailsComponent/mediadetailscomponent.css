@@ -96,6 +96,15 @@
     border-radius: 10px;
 }
 
+.linkDetails {
+    text-decoration: none;
+    color: white;
+}
+.linkDetails:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 @media (max-width:1450px),
 (max-height:800px) {
     .crewMembersDetails {
