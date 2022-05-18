@@ -18,8 +18,12 @@
     font-size: 40px;
     font-weight: bold;
     color: white;
-    padding: 3%;
+    padding: 3% 3% 1% 3%;
     margin: 0 auto;
+}
+.currentEpisode{
+    color: white;
+    margin-bottom: 2%;
 }
 .player{
    width: 80%; 
@@ -30,4 +34,15 @@
     font-size: 20px;
     color: white;
     padding: 3vh 5vw;
+}
+.selectSeason{
+    background-color: grey;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    margin: 1vh 85vw 3vh auto ;
+    justify-self: left;
 }
