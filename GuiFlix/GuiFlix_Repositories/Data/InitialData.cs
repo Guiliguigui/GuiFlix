@@ -652,7 +652,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 13,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 1!",
                 EpisodeNumber=1,
                 Name ="Simpsons Roasting on Open Fire",
@@ -664,7 +664,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 14,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 1!",
                 EpisodeNumber=2,
                 Name ="Bart the genius",
@@ -676,7 +676,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 15,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 1!",
                 EpisodeNumber=3,
                 Name ="Homer's Odyssey",
@@ -688,7 +688,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 16,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 1!",
                 EpisodeNumber=4,
                 Name ="There's no Disgrace Like Home",
@@ -700,7 +700,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 17,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=1,
                 Name ="Bart The General",
@@ -712,7 +712,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 18,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=2,
                 Name ="Moaning Lisa",
@@ -724,7 +724,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 19,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=3,
                 Name ="The Call of The Simpsons",
@@ -736,7 +736,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 20,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=4,
                 Name ="The Telltale Head",
@@ -748,7 +748,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 21,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=5,
                 Name ="Life On The Fast Lane",
@@ -760,7 +760,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 22,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=6,
                 Name ="Homer's Night Out",
@@ -772,7 +772,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 23,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=7,
                 Name ="The Crepes of Wrath",
@@ -784,7 +784,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 24,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=8,
                 Name ="Krusty Gets Busted",
@@ -796,7 +796,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 25,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=9,
                 Name ="Some Enchanted Evening",
@@ -808,7 +808,7 @@ namespace GuiFlix_Repositories.Data
             new Episode
             {
                 Id = 26,
-                TVShowId=3,
+                TVShowId=37,
                 Season="Partie 2!",
                 EpisodeNumber=10,
                 Name ="Bart Gets an F",
