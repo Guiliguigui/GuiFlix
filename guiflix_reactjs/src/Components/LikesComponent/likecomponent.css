@@ -1,0 +1,12 @@
+.like {
+    font-size: 50px;
+    width: 70px;
+    height: 80px;
+    background-color: grey;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+
+.like:hover{
+    transform: scale(1.2);
+}

@@ -29,14 +29,14 @@ namespace GuiFlix_API.Controllers
         [HttpGet("{id}")]
         public virtual async Task<ActionResult<TEntity>> Get(int id)
         {
-            var account = await _repository.Find(id);
+            var entity = await _repository.Find(id);
 
-            if (account == null)
+            if (entity == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return entity;
         }
 
         [HttpPut("{id}")]

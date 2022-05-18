@@ -68,7 +68,7 @@
     -webkit-box-orient: vertical;
 }
 
-.buttonPlay {
+.buttonDetails {
     font-size: 50px;
     width: 70px;
     height: 80px;
@@ -76,20 +76,22 @@
     border-radius: 20px;
     border: solid 2px black;
 }
-.buttonPlay:hover{
+.buttonDetails:hover{
     transform: scale(1.2);
 }
 .bottomDetails {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 700px;
 }
 
-.durationMedia {
-    margin: auto 1vw;
+.textDetails {
     background-color: grey;
     color: black;
     text-align: center;
     height: 30px;
-    width: 80px;
+    width: 100px;
     border: solid black 3px;
     border-radius: 10px;
 }
