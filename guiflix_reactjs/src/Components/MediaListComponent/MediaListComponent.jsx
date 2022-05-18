@@ -4,16 +4,10 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { v4 as uuidv4 } from 'uuid';
 import './medialistcomponent.css';
+import MediaCardComponent from "../MediaCardComponent/MediaCardComponent";
 
 export default function MediaListComponent(props) {
     let index = 0;
-    const details = (id) => {
-        document.getElementById(id).style.visibility = "visible";
-    }
-    const hideDetails = (id) => {
-        document.getElementById(id).style.visibility = "hidden";
-
-    }
     const goBack = () => {
         if (index > 0) {
             index--;
@@ -34,9 +28,6 @@ export default function MediaListComponent(props) {
             document.getElementById(props.nameCarousel).style.transform = "translateX(-" + index * 360 + "px)"
         }
     }
-    useEffect(() => {
-        get("Media/")
-    })
     return (
         <div className="carousel">
             <div className="titleCarousel">
@@ -48,9 +39,7 @@ export default function MediaListComponent(props) {
                     {props.medias.map((media, index) => {
                         var UniqId = uuidv4();
                         return (
-                            <div onMouseEnter={(e) => { details(UniqId) }} onMouseLeave={(e) => { hideDetails(UniqId) }} className="mediaCard" style={{ backgroundImage: "url(" + media.thumbnailLink + ")" }} key={index}>
-                                <div onClick={(e) => { props.showDetails(media.id) }} className="detailsMedia" id={UniqId}>{media.name}<br />Show more...</div>
-                            </div>
+                            <MediaCardComponent showDetails={props.showDetails} media={media} key={UniqId} UniqId={UniqId}/>
                         )
                     })}
                 </div>
