@@ -4,14 +4,16 @@ using GuiFlix_Repositories.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuiFlix_Repositories.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220518114631_InitialDataV5")]
+    partial class InitialDataV5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1949,7 +1951,7 @@ namespace GuiFlix_Repositories.Migrations
                             Name = "The Simpson's: The Movies",
                             Pegi = 0,
                             RealeaseDate = new DateTime(2010, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://www.critikat.com/wp-content/uploads/fly-images/35368/arton1450-1450x800-c.jpg",
+                            ThumbnailLink = "https://media.gqmagazine.fr/photos/5eb165192bfbee9eb2f42e42/master/pass/los-simpson-cuarto-oculto.jpg",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         },

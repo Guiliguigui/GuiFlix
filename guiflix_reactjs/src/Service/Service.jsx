@@ -11,8 +11,6 @@ export const post = (path, data, config) => {
     return axios.post(url + path, data, config);
 }
 
-export const supprime = (path, id, config) => {
-    console.log(id)
-    console.log(path)
-    return axios.delete(url + path + id, config);
+export const supprime = (path, config) => {
+    return axios.delete(url + path, config);
 }

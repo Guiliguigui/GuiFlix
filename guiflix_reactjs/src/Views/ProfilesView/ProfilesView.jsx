@@ -51,18 +51,25 @@ export default function ProfilesView(props) {
             {
                 headers: { Authorization: `Bearer ${JWT}` }
             }
-        )
+        ).then(res => {
+            props.setProfileSelected(res.headers)
+            window.location.reload();
+        })
+        .catch(err => {
+            err.setErrorMessage(err.message);
+            console.error('There was an error!', err);
+        });
 
     }
     return (
         <div className='container-fluid profiles align-items-center justify-content-center'>
             {props.account.profiles.map((profile, key) => (
-                <div>
-                    <div key={key} className='profile' onClick={e => selectProfile(profile.id)}>
+                <div key={key}>
+                    <div className='profile' onClick={e => selectProfile(profile.id)}>
                         <img src={profile.avatarLink} alt={profile.userName} />
                         <h2>{profile.userName}</h2>
                     </div>
-                    <button onClick={e => deleteProfile(profile.id)}><FontAwesomeIcon icon={faEraser} /></button>
+                    <div key={key} onClick={e => deleteProfile(profile.id)} className="text-danger mt-50 fa-2xl"><FontAwesomeIcon icon={faEraser} /></div>
                 </div>
             ))}
             <div className='profile' onClick={e => sendNewProfile()}>

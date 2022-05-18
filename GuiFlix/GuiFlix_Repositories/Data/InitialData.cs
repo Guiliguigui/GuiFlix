@@ -213,7 +213,7 @@ namespace GuiFlix_Repositories.Data
                 Pegi=Media.PegiTypes.ALL,
                 RealeaseDate=new DateTime(2010,07,12),
                 Description= "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-                ThumbnailLink="https://media.gqmagazine.fr/photos/5eb165192bfbee9eb2f42e42/master/pass/los-simpson-cuarto-oculto.jpg",
+                ThumbnailLink="https://www.critikat.com/wp-content/uploads/fly-images/35368/arton1450-1450x800-c.jpg",
                 Duration= new TimeSpan(0,10,35),
                 SourceLink="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
             },
@@ -1289,8 +1289,92 @@ namespace GuiFlix_Repositories.Data
             new CrewMember
             {
                 Id=1,
-                FirstName="Sacha",
-                LastName="Goedegebure"
+                FirstName="Matt",
+                LastName="Groening"
+            },
+            new CrewMember
+            {
+                Id=2,
+                FirstName="Dan",
+                LastName="Castellaneta"
+            },
+            new CrewMember
+            {
+                Id=3,
+                FirstName="Julie",
+                LastName="Kavner"
+            },
+            new CrewMember
+            {
+                Id=4,
+                FirstName="Nancy",
+                LastName="CartWright"
+            },
+            new CrewMember
+            {
+                Id=5,
+                FirstName="Yeardley",
+                LastName="Smith"
+            },
+            new CrewMember
+            {
+                Id=6,
+                FirstName="James",
+                LastName="Earl Jones"
+            },
+            new CrewMember
+            {
+                Id=7,
+                FirstName="Glenn",
+                LastName="Close"
+            },
+            new CrewMember
+            {
+                Id=8,
+                FirstName="Maggie",
+                LastName="Roswell"
+            },
+            new CrewMember
+            {
+                Id=9,
+                FirstName="Harry",
+                LastName="Shearer"
+            },
+            new CrewMember
+            {
+                Id=10,
+                FirstName="Marcia",
+                LastName="Mitzman Gaven"
+            },
+            new CrewMember
+            {
+                Id=11,
+                FirstName="Pamela",
+                LastName="Hayden"
+            },
+            new CrewMember
+            {
+                Id=12,
+                FirstName="Hank",
+                LastName="Azaria"
+            },
+            new CrewMember
+            {
+                Id=13,
+                FirstName="Jan",
+                LastName="Hooks"
+            },
+            new CrewMember
+            {
+                Id=14,
+                FirstName="Tress",
+                LastName="MacNeille"
+            },
+            new CrewMember
+            {
+                Id=15,
+                FirstName="Russi",
+                LastName="Taylor"
             }
         };
         public MediaCrewMember[] MediaCrewMember => new MediaCrewMember[]
@@ -1299,15 +1383,211 @@ namespace GuiFlix_Repositories.Data
             {
                 Id = 1,
                 CrewMemberId=1,
-                MediaId=1,
+                MediaId=37,
                 Role="Realisator"
             },
             new MediaCrewMember
             {
                 Id = 2,
+                CrewMemberId=2,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 3,
+                CrewMemberId=3,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 4,
+                CrewMemberId=4,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 5,
+                CrewMemberId=5,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 6,
+                CrewMemberId=6,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 7,
+                CrewMemberId=7,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 8,
+                CrewMemberId=8,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 9,
+                CrewMemberId=9,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 10,
+                CrewMemberId=10,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 11,
+                CrewMemberId=11,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 12,
+                CrewMemberId=12,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 13,
+                CrewMemberId=13,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 14,
+                CrewMemberId=14,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 15,
+                CrewMemberId=15,
+                MediaId=37,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 16,
                 CrewMemberId=1,
-                MediaId=2,
+                MediaId=12,
                 Role="Realisator"
+            },
+            new MediaCrewMember
+            {
+                Id = 17,
+                CrewMemberId=2,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 18,
+                CrewMemberId=3,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 19,
+                CrewMemberId=4,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 20,
+                CrewMemberId=5,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 21,
+                CrewMemberId=6,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 22,
+                CrewMemberId=7,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 23,
+                CrewMemberId=8,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 24,
+                CrewMemberId=9,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 25,
+                CrewMemberId=10,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 26,
+                CrewMemberId=11,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 27,
+                CrewMemberId=12,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 28,
+                CrewMemberId=13,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 29,
+                CrewMemberId=14,
+                MediaId=12,
+                Role="Voice Actor"
+            },
+            new MediaCrewMember
+            {
+                Id = 30,
+                CrewMemberId=15,
+                MediaId=12,
+                Role="Voice Actor"
             }
         };
         public List[] Lists => new List[]
@@ -1330,6 +1610,21 @@ namespace GuiFlix_Repositories.Data
             {
                 ListsId = 1,
                 MediasId = 2
+            },
+            new
+            {
+                ListsId = 1,
+                MediasId = 3
+            },
+            new
+            {
+                ListsId = 1,
+                MediasId = 4
+            },
+            new
+            {
+                ListsId = 1,
+                MediasId = 5
             }
         };
         public Like[] Likes => new Like[]
