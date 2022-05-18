@@ -84,7 +84,7 @@ namespace GuiFlix_Repositories.Data
                 Id=2,
                 UserName="YoYo",
                 AccountId=1,
-                AvatarLink="https://archive.org/download/profiles_202104/hero.png"
+                AvatarLink="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bf6e4a33850498.56ba69ac3064f.png"
             },new Profile
             {
                 Id=3,
