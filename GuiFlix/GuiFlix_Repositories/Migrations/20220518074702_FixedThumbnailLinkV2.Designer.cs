@@ -4,14 +4,16 @@ using GuiFlix_Repositories.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuiFlix_Repositories.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220518074702_FixedThumbnailLinkV2")]
+    partial class FixedThumbnailLinkV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -443,31 +445,6 @@ namespace GuiFlix_Repositories.Migrations
                         {
                             CategoriesId = 3,
                             MediasId = 35
-                        },
-                        new
-                        {
-                            CategoriesId = 5,
-                            MediasId = 36
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            MediasId = 36
-                        },
-                        new
-                        {
-                            CategoriesId = 5,
-                            MediasId = 37
-                        },
-                        new
-                        {
-                            CategoriesId = 3,
-                            MediasId = 37
-                        },
-                        new
-                        {
-                            CategoriesId = 1,
-                            MediasId = 37
                         });
                 });
 
@@ -681,43 +658,30 @@ namespace GuiFlix_Repositories.Migrations
                             Id = 2,
                             Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 2,
+                            EpisodeNumber = 1,
                             Name = "Big Buck Bunny p1e2",
                             RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Season = "Part 1",
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
                             TVShowId = 2,
-                            ThumbnailLink = "https://image.tmdb.org/t/p/original/bZxwNUANy2KAYBjM9UyUlqiCMI1.jpg"
+                            ThumbnailLink = "https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg"
                         },
                         new
                         {
                             Id = 3,
                             Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 3,
+                            EpisodeNumber = 1,
                             Name = "Big Buck Bunny p1e3",
                             RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Season = "Part 1",
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
                             TVShowId = 2,
-                            ThumbnailLink = "https://upload.wikimedia.org/wikipedia/commons/3/31/Big.Buck.Bunny.-.Frank.Bunny.png"
+                            ThumbnailLink = "https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 4,
-                            Name = "Big Buck Bunny p1e4",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Part 1",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://upload.wikimedia.org/wikipedia/commons/4/44/Big.Buck.Bunny.-.Bunny.with.Bow.png"
-                        },
-                        new
-                        {
-                            Id = 5,
                             Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             EpisodeNumber = 1,
@@ -726,280 +690,20 @@ namespace GuiFlix_Repositories.Migrations
                             Season = "Partie 2!",
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
                             TVShowId = 2,
-                            ThumbnailLink = "https://ddz4ak4pa3d19.cloudfront.net/cache/5e/e5/5ee50a089ff4e9d1593ad8b5278f2f48.jpg"
+                            ThumbnailLink = "https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg"
                         },
                         new
                         {
-                            Id = 6,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 2,
-                            Name = "Big Buck Bunny p2e2",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://i.ytimg.com/vi/4-Ddumty4mk/maxresdefault.jpg"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 3,
-                            Name = "Big Buck Bunny p2e3",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://i.ytimg.com/vi/wWla97L1wng/maxresdefault.jpg"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 4,
-                            Name = "Big Buck Bunny p2e4",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://framalibre.org/sites/default/files/PeachBlender.jpg"
-                        },
-                        new
-                        {
-                            Id = 9,
+                            Id = 5,
                             Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             EpisodeNumber = 1,
-                            Name = "Big Buck Bunny p3e1",
+                            Name = "Big Buck Bunny p1e2",
                             RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 3!",
+                            Season = "Partie 2!",
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
                             TVShowId = 2,
-                            ThumbnailLink = "https://cutewallpaper.org/21/big-buck-bunny-wallpapers/Big-Buck-BUNNY-by-Blender-Foundation-ALPdigest-CHANNEL.jpg"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 2,
-                            Name = "Big Buck Bunny p3e2",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 3!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://i.ytimg.com/vi/2tdp1FucyAk/maxresdefault.jpg"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 3,
-                            Name = "Big Buck Bunny p3e3",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 3!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://i0.wp.com/thinkinganimation.com/wp-content/uploads/2008/06/evil-frank.png"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 4,
-                            Name = "Big Buck Bunny p3e4",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 3!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 2,
-                            ThumbnailLink = "https://flossmanuals.developpez.com/tutoriels/blender/jeu-video/images/yofrankie15.png"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "While the Simpsons are Christmas shopping, Bart sneaks off and gets a tattoo. Marge soon discovers this and uses the family's Christmas savings to get it removed. Meanwhile, Homer discovers that he will not be getting a Christmas bonus from Mr. Burns and thus the family has no money to buy Christmas presents. He decides to keep their financial troubles a secret and get a job as a department store Santa, but later discovers that the job does not pay enough. Desperate for a miracle, Homer and Bart go to the dog track on Christmas Eve in hopes of earning some money. He bets it all on a long shot named Santa's Little Helper, who loses. Angry that he lost, the dog's owner disowns him. Homer lets Bart keep him. Later, Homer attempts to come clean to everyone, but Bart exclaims that they have a dog and everyone happily welcomes the newest member of the Simpson family.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 1,
-                            Name = "Simpsons Roasting on Open Fire",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 1!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://static3.srcdn.com/wordpress/wp-content/uploads/2019/04/SIMPSONS-PETS-RANKED.jpg"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "Bart has trouble on an intelligence test and sneakily switches tests with Martin Prince, the class genius. After the results are tabulated, the school psychiatrist labels Bart a genius and sends him to the Enriched Learning Center for Gifted Children. Homer starts treating Bart with respect, but Bart immediately feels out of place among his new classmates and alienated from his former peers. He confesses that he cheated on the test and is subsequently sent back to Springfield Elementary School.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 2,
-                            Name = "Bart the genius",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 1!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://i.ytimg.com/vi/vTB26Fxp57Q/maxresdefault.jpg"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Description = "Bart's class visits the Springfield Nuclear Power Plant and Homer, anxious to look like he is working, accidentally crashes his cart into a radioactive pipe, causing him to be fired. Depressed and unable to find a new job, he decides to commit suicide by jumping off a bridge. His family discover his plan and try to stop him, but in the process they are almost run over by a truck. Discovering his new purpose, Homer embarks on a safety crusade and eventually decides to go after the Nuclear Plant and holds protest rallies. To end Homer's furor, Mr. Burns offers him a job as safety inspector, with increased salary, which Homer accepts.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 3,
-                            Name = "Homer's Odyssey",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 1!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BZTIxMDk3MTEtNDExYi00MDBhLTljMmMtZjI0Y2I1YTlkZGY1XkEyXkFqcGdeQXVyMjI4OTg3MTc@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Description = "Homer takes his family to the company picnic at Mr. Burns's manor. Marge, Bart and Lisa embarrass Homer and he notices that Mr. Burns seems to favour a family who love and respect one another. Convinced that both he and his family are pathetic, he takes everyone to a family therapy center. When standard methods prove useless in civilizing them, the doctor resorts to shock therapy. Soon the Simpsons start shocking each other, causing the whole town to lose power.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 4,
-                            Name = "There's no Disgrace Like Home",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 1!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BZTU3OTgxNjItMWQ2Mi00YjA4LWEwMzctNDYxNWRkYTY1NDYyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Description = "Bart runs afoul of Nelson Muntz, the school bully, who begins attacking Bart every day after school. Homer suggests fighting back, which does not work. Desperate for a solution, Bart visits Grampa for advice. Grampa takes Bart to meet Herman, who suggests that Bart rally all the school children and declare war on Nelson. Bart and his army attack Nelson and successfully manage to convince him to give up his bullying ways.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 1,
-                            Name = "Bart The General",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BMzk4ZDU2OTMtZjM0NC00ZWIyLWFmNmQtMjcyZGQ1OWE0ZWMyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Description = "Lisa becomes depressed, which begins to affect her performance in school. Neither Marge nor Homer are able to make Lisa happier. One night, she hears distant Jazz music and sneaks out of her room to follow it. She meets Bleeding Gums Murphy, who teaches her how to express her music through the saxophone. When Marge drops Lisa off at school the next day, she suggests that Lisa smile no matter how she feels. However, Marge sees that Lisa is being denied her creativity and realizes that is what is disappointing her. Marge tells Lisa to just be herself, and the entire family go to see Murphy perform at a local Jazz club.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 2,
-                            Name = "Moaning Lisa",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BOWFlN2U2NWYtZWIyYy00YTY5LTlhMDAtZmQwMWZhM2I3MjQ4XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Description = "Homer becomes envious of Flanders' new RV and goes to Bob's RV Round-up to buy one of his own. Settling on a dilapidated camper, he takes the family camping and in the process destroys the RV. Leaving Lisa and Marge behind, Bart and Homer try to find their way back to civilization, but have little luck. Later on, Homer is mistaken for Bigfoot and captured. Marge, Bart and Lisa are saved and Homer is released, although scientists say they can not determine which species he belongs to.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 3,
-                            Name = "The Call of The Simpsons",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BOTkxMzY3Y2QtMWMyMC00NDllLTkyMTctZTY4MDFjZGExYTc1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Description = "Bart becomes friends with Jimbo, Dolph, and Kearney, a group of local troublemakers. Trying to impress them, Bart decides to cut off and steal the head of the statue of Jebediah Springfield. The next day, the entire town grieves for the vandalized statue and Bart discovers that his new friends want to attack the vandal. Feeling remorse, Bart confesses to his family and Homer and Bart take the head back to the statue after passing through the furious people.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 4,
-                            Name = "The Telltale Head",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BNTFmZWU1YTAtOWIzMy00ZDY2LWFhNDktMjBmMjk5YmU5NmFiXkEyXkFqcGdeQXVyMjI4OTg3MTc@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Description = "Having forgotten about Marge's birthday, Homer rushes to the Springfield mall and impulsively buys her a bowling ball. Marge is not impressed with the gift and after discovering that he intends to use it, she decides to spite him by going bowling herself. While at the alley, she meets Jacques, a charming French bowling instructor, who offers her lessons. Jacques begins to fall for Marge and invites her to his apartment. Although she agrees, Marge undergoes a moral dilemma. In the end, Marge visits Homer at the nuclear plant.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 5,
-                            Name = "Life On The Fast Lane",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BNjY3NzExYWYtNGFlZC00NmJkLTlhZjQtN2RlYWIyMTYzYWYwXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Description = "Bart purchases a mini spy camera and manages to take a picture of Homer dancing next to stripper named Princess Kashmir at a co-worker's strip club party. He gives copies of the picture to his friends, and eventually the picture starts to circulate around until eventually Marge sees it. She kicks Homer out of the house, but the next day explains that she is not upset about his dancing next to a woman, but rather that Bart saw it. She demands that he take Bart and go apologize to Princess Kashmir. Homer agrees and says he is ready to start respecting women.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 6,
-                            Name = "Homer's Night Out",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BMDFjMjQzYTMtMGM2YS00NjYyLTg3NzktMDAyZjJiY2E5MTcwXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Description = "Principal Skinner finally becomes fed up with Bart's pranks and proposes that Bart be sent to France as part of the student exchange program. The family agrees and Bart is sent to the beautiful Château Maison, which is actually a dilapidated farmhouse on a neglected vineyard. Bart is treated like a slave by two unscrupulous winemakers, César and Ugolin, who eventually feed him wine tainted with antifreeze. Meanwhile, an Albanian boy named Adil starts to live with the Simpsons who, unbeknownst to Homer, is a spy sent by his country to obtain nuclear blueprints. Back in France, Bart learns French and reports the winemakers' crimes to the authorities.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 7,
-                            Name = "The Crepes of Wrath",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BMDc0YzBhOWItYjk0OS00YTBiLWEwNDUtMzI2YzQ0NWM1YjNlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Description = "While buying ice cream at the Kwik-E-Mart, Homer witnesses a robbery perpetrated by a man believed to be Krusty the Clown, host of Krusty the Clown Show, Bart's favorite program. Krusty is sent to jail and his show is taken over by his assistant, Sideshow Bob. Bart is certain Krusty is innocent, and gathers evidence to support his claim, which he takes to Krusty's bestest friend, Sideshow Bob. Bart realizes the robbery was actually committed by Bob, who was trying to frame Krusty. Bob is arrested and Krusty thanks Bart for saving him.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 8,
-                            Name = "Krusty Gets Busted",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BNDFhNjFkNzgtN2M4OC00YTg1LWI5NjEtZGIxNTUyNTMyNjg5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Description = "Marge, feeling unappreciated by Homer, makes a call to a radio therapist, which Homer overhears at work. Homer, wanting to make it up to Marge, decides to take her to dinner at a fancy restaurant and hires a babysitter to take care of Bart and Lisa. They are sent Ms. Botz, who Bart and Lisa soon discover is actually a burglar nicknamed The Babysitter Bandi. They are captured by Ms. Botz and tied up but eventually are freed by Maggie. Bart and Lisa capture Ms. Botz and call the police. Meanwhile, Marge and Homer return home and find Ms. Botz is tied up. Homer, unaware of her true identity, frees her and Ms. Botz makes a clean getaway just moments before the police arrive.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 9,
-                            Name = "Some Enchanted Evening",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BZmFkZDY3MjItMGY0NS00YTFkLWI1YjMtYzEwMTliYTFiMmFkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Description = "Bart fails a test and is told he has one more chance to pass it or else he will be held back a year. Bart tries to get the class genius Martin Prince to help him, but after that fails, Bart prays for help. That night, Springfield is hit with a massive blizzard and the school is closed, giving Bart one more day to study. Despite his desperate attempts, Bart fails the test again. While crying, he mentions an obscure historical event and Mrs. Krabappel, noting that he applied practical knowledge, passes him.",
-                            Duration = new TimeSpan(0, 0, 10, 35, 0),
-                            EpisodeNumber = 10,
-                            Name = "Bart Gets an F",
-                            RealeaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Season = "Partie 2!",
-                            SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm",
-                            TVShowId = 3,
-                            ThumbnailLink = "https://m.media-amazon.com/images/M/MV5BNzQ3ZDJjMTUtOTllNi00ZmY4LWI2MjktOWJiNmM4ZjBmZDgxXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+                            ThumbnailLink = "https://images-0.wuaki.tv/system/shots/184794/original/snapshot-1590658111.jpeg"
                         });
                 });
 
@@ -1041,251 +745,6 @@ namespace GuiFlix_Repositories.Migrations
                             MediaId = 2,
                             ProfileId = 1,
                             Type = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            MediaId = 3,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            MediaId = 4,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            MediaId = 5,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 6,
-                            MediaId = 6,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            MediaId = 7,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            MediaId = 8,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 9,
-                            MediaId = 9,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            MediaId = 10,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            MediaId = 11,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 12,
-                            MediaId = 12,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 13,
-                            MediaId = 13,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 14,
-                            MediaId = 14,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 15,
-                            MediaId = 15,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 16,
-                            MediaId = 16,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 17,
-                            MediaId = 17,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 18,
-                            MediaId = 18,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 19,
-                            MediaId = 19,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 20,
-                            MediaId = 20,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 21,
-                            MediaId = 21,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 22,
-                            MediaId = 22,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 23,
-                            MediaId = 23,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 24,
-                            MediaId = 24,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 25,
-                            MediaId = 25,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 26,
-                            MediaId = 26,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 27,
-                            MediaId = 27,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 28,
-                            MediaId = 28,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 29,
-                            MediaId = 29,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 30,
-                            MediaId = 30,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 31,
-                            MediaId = 31,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 32,
-                            MediaId = 32,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 33,
-                            MediaId = 33,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 34,
-                            MediaId = 34,
-                            ProfileId = 1,
-                            Type = 0
-                        },
-                        new
-                        {
-                            Id = 35,
-                            MediaId = 35,
-                            ProfileId = 1,
-                            Type = 2
-                        },
-                        new
-                        {
-                            Id = 36,
-                            MediaId = 36,
-                            ProfileId = 1,
-                            Type = 1
-                        },
-                        new
-                        {
-                            Id = 37,
-                            MediaId = 37,
-                            ProfileId = 1,
-                            Type = 0
                         });
                 });
 
@@ -1731,7 +1190,7 @@ namespace GuiFlix_Repositories.Migrations
                             Name = "Spider-Man: Into the SpiderVerse",
                             Pegi = 0,
                             RealeaseDate = new DateTime(2020, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "http://www.coupleofpixels.be/wp-content/uploads/2018/12/intothespiderverse1.jpg",
+                            ThumbnailLink = "https://medias.3dvf.com/news/sitegrab/persichetti_spiderman_02.jpg",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         },
@@ -1753,7 +1212,7 @@ namespace GuiFlix_Repositories.Migrations
                             Name = "Astro Boy",
                             Pegi = 0,
                             RealeaseDate = new DateTime(2011, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://i.ytimg.com/vi/5Z123CARsTs/maxresdefault.jpg",
+                            ThumbnailLink = "https://www.onnetflix.com.au/media/bgimages/70108989/0464ca78ce9d5d5918886f8a5b7eafbecdb72611.webp",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         },
@@ -1896,7 +1355,7 @@ namespace GuiFlix_Repositories.Migrations
                             Name = "Megamind",
                             Pegi = 0,
                             RealeaseDate = new DateTime(2009, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2022-02/Megamind.jpg",
+                            ThumbnailLink = "http://ekladata.com/sxd6A2dJIqb4TEr9wSVudl9dupw.jpg",
                             Duration = new TimeSpan(0, 0, 10, 35, 0),
                             SourceLink = "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.720p.webm"
                         },
@@ -1939,15 +1398,6 @@ namespace GuiFlix_Repositories.Migrations
                             Pegi = 0,
                             RealeaseDate = new DateTime(2008, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ThumbnailLink = "https://www.embedded-france.org/wp-content/uploads/2013/04/big_buck_bunny_2008_11.jpg"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Description = "Big Buck Bunny (code-named Project Peach) is a 2008 short computer-animated comedy film featuring animals of the forest, made by the Blender Institute, part of the Blender Foundation. Like the foundation's previous film, Elephants Dream, the film was made using Blender, a free and open-source software application for 3D computer modeling and animation developed by the same foundation. Unlike that earlier project, the tone and visuals departed from a cryptic story and dark visuals to one of comedy, cartoons, and light-heartedness.\nIt was released as an open-source film under the Creative Commons Attribution 2.5 license.",
-                            Name = "The Simpson's Tv Show",
-                            Pegi = 0,
-                            RealeaseDate = new DateTime(1989, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ThumbnailLink = "https://img.betaseries.com/qWBzg3rSTSQk5IwvvKISgAa3i7Q=/500x282/smart/https%3A%2F%2Fwww.betaseries.com%2Fblog%2Fwp-content%2Fuploads%2F2021%2F07%2F12_62521772.jpeg"
                         });
                 });
 
