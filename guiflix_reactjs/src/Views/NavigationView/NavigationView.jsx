@@ -9,10 +9,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function NavigationView(props) {
     const [randomMedia, setRandomMedia] = useState([]);
+    const [randomMedias, setRandomMedias] = useState([]);
     const [media, setMedia] = useState([]);
     const [isDetails, setIsDetails] = useState(false);
     const [isHeaderLoading, setIsHeaderLoading] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
+    const [isRandomLoading, setIsRandomLoading] = useState(true);
     const [category, setCategory] = useState([]);
     
     
@@ -26,6 +28,14 @@ export default function NavigationView(props) {
         }).then((res) => {
             setRandomMedia(res.data);
             setIsHeaderLoading(false);
+        }).catch(err => {
+            console.log(err.message)
+        })
+        get("Media/Random?quantity=10", {
+            headers: { Authorization: `Bearer ${JWT}` }
+        }).then((res) => {
+            setRandomMedias(res.data);
+            setIsRandomLoading(false);
         }).catch(err => {
             console.log(err.message)
         })
@@ -61,6 +71,8 @@ export default function NavigationView(props) {
                         <MediaListComponent key={uuidv4()} medias={category.medias} nameCarousel={category.name} showDetails={showDetails} />
                     )
                 })}
+                {isRandomLoading? <LoaderComponent/> : <MediaListComponent medias={randomMedias} nameCarousel={"Our selection for "+props.profileSelected.userName} showDetails={showDetails}/>}
+
             </div>
             {
                 isDetails ? <MediaDetailsComponent mediaId={media.id} setIsDetails={setIsDetails} profileSelected={props.profileSelected}/> : ""
