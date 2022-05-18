@@ -1,5 +1,5 @@
 import './videoplayerview.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,20 +9,22 @@ import LoaderComponent from '../../Components/LoaderComponent/LoaderComponent';
 export default function VideoPlayerView() {
     const location = useLocation();
     const navigate = useNavigate();
+    const videoRef = useRef();
     const [sourceLink,setSourceLink] = useState("");
+    const [season,setSeason] = useState("");
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        setIsLoading(false)
-        
+        setIsLoading(false);
+        location.state.type === "TVShow"? setSourceLink(location.state.episodes[0].sourceLink) : setSourceLink("");
     }, [])
+    useEffect(()=>{
+        videoRef.current?.load();
+    },[sourceLink])
 
     const goBack = () => {
         navigate("/navigation");
     }
-    const changeEpisode= (link) =>{
-        document.getElementById("player").style.display = "";
-        setSourceLink(link)
-    }
+
 
     if (isLoading) {
         return (<LoaderComponent />)
@@ -38,16 +40,17 @@ export default function VideoPlayerView() {
         )
     }
     else {
+        
         return (
             <div className='videoPlayer'>
                 <button className="buttonBack" onClick={goBack}><FontAwesomeIcon icon={faArrowLeft} /></button>
                 <div className='titlePlayer'>{location.state.name}</div>
-                <video controls className='player' id="player" style={{display:"none"}}><source id="episodePlayer" src={sourceLink} /></video>
+                <video controls className='player' ref={videoRef}><source id="episodePlayer" src={sourceLink} type="video/webm" />Error video not find</video>
                 <div className='descriptionPlayer'>{location.state.description}</div>
                 <div className='episodesList'>
                     {location.state.episodes.map((episode, index) => {
                         return (
-                            <EpisodeComponent key={index} episode={episode} changeEpisode={changeEpisode} />
+                            <EpisodeComponent key={index} episode={episode}  setSourceLink={setSourceLink}/>
                         )
                     })}
                 </div>
