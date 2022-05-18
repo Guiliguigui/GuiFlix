@@ -6,8 +6,8 @@ import { post } from "../../Service/Service";
 import { Modal, Button } from "react-bootstrap";
 
 export default function RegisterComponent() {
-    const validEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$');
-    const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+    const validEmail = new RegExp('^[a-zA-Z0-9\\._:$!%-]+@[a-zA-Z0-9\\.-]+\\.[a-zA-Z]+$');
+    const validPassword = new RegExp('^(?!\\s*$).+');
     const validLastName = new RegExp('^[A-Z]{1}[a-zA-Z\\séèë\\-_]*$');
     const validFirstName = new RegExp('^[A-Z]{1}[a-zA-Z\\séèë\\-_]*$');
     const validPhone = new RegExp('^([0|\\+33|33]+)(\\.|\\-|\\s)?([1-9]{1})((\\.|\\-|\\s)?[0-9]{2}){4}$');
@@ -62,7 +62,8 @@ export default function RegisterComponent() {
         }
         setFragmentError(
             <>
-                {errorList.map((e, index) => {
+                {
+                    errorList.map((e, index) => {
                     return (
                         <div key={index}>{e}</div>
                     )
