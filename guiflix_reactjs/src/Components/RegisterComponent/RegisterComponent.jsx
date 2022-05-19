@@ -100,7 +100,7 @@ export default function RegisterComponent() {
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email-Address" className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value).SetHasNumber(e.target.value).setHasLowerChar(e.target.value).setHasMiniMaxChar(e.target.value).setHasSymbols(e.target.value).setHasUpperChar(e.target.value)} placeholder='Password' className="form-control form-control-lg text-light bg-dark" />
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' className="form-control form-control-lg text-light bg-dark" />
                             </div>
                             <div className="form-outline mb-4">
                                 <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder='LastName' className="form-control form-control-lg text-light bg-dark" />
