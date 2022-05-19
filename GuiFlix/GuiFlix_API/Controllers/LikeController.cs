@@ -29,11 +29,11 @@ namespace GuiFlix_API.Controllers
             return CreatedAtAction("Get", new { id = entity.GetType().GetProperty("Id")!.GetValue(entity) }, entity);
         }
         [HttpGet("IsMediaLiked")]
-        public async Task<ActionResult<Like>> Like(int profileId, int mediaId)
+        public async Task<ActionResult<Like>> IsMediaLiked(int profileId, int mediaId)
         {
             var entityFromDb = await _repository.Find(e => e.ProfileId == profileId && e.MediaId == mediaId);
             if (entityFromDb == null)
-                return NotFound();
+                return NoContent();
             return CreatedAtAction("Get", new { id = entityFromDb.Id }, entityFromDb);
         }
     }

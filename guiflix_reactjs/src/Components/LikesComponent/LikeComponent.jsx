@@ -6,7 +6,7 @@ import { faHeart, faThumbsUp, faThumbsDown, faHeartCirclePlus } from "@fortaweso
 import "./likecomponent.css";
 
 export default function LikeComponent(props) {
-    const LikeTypes = [faHeart, faThumbsUp, faThumbsDown]
+    const LikeTypes = [faHeart, faThumbsUp, faThumbsDown, faHeartCirclePlus];
     const [like, setLike] = useState(faHeartCirclePlus);
     const { id } = useParams();
     const JWT = localStorage.getItem("GuiFlix_JWT");
@@ -15,9 +15,7 @@ export default function LikeComponent(props) {
         get(`Like/IsMediaLiked?profileId=${props.profileSelected.id}&mediaId=${props.mediaId}`, {
             headers: { Authorization: `Bearer ${JWT}` }
         }).then((res) => {
-            setLike(LikeTypes[res.data.type])
-        }).catch((err) => {
-            setLike(faHeartCirclePlus)
+            setLike(LikeTypes[res.data.type ?? 3])
         })
     }, [])
 
