@@ -3,11 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./logincomponent.css";
 import { post } from "../../Service/Service";
 import { Modal, Button } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faEye } from "@fortawesome/free-solid-svg-icons";
+// import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-// token dans localstorage account dans le redux state
 
 export default function LoginComponent() {
     const [email, setEmail] = useState('');
@@ -17,12 +16,7 @@ export default function LoginComponent() {
     const [modalErrorMessage, setModalErrorMessage] = useState('Input Empty');
     const navigate = useNavigate();
 
-    const togglePassword = () => {
-        if (passwordType === "password") {
-            setPasswordType("text")
-        }
-        setPasswordType("password")
-    }
+    
 
     const validate = () => {
         console.log("nimmememe")
