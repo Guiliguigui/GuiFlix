@@ -76,7 +76,7 @@ export default function RegisterComponent() {
             }).then(
                 res => {
                     if (res.data.isRegisterationSuccessful) {
-                        prompt("Registeration Successfull", "Your registeration is a success,\n Please Sign in to create your first profile", "close")
+                        alert("Your registeration is a success,\nPlease Sign in to create your first profile")
                         navigate("/login")
                     }
                     else {

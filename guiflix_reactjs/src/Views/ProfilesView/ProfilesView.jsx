@@ -49,7 +49,6 @@ export default function ProfilesView(props) {
                 )
         }
     }
-
     async function deleteProfile(id) {
         const JWT = localStorage.getItem("GuiFlix_JWT");
         supprime("Profile/" + id,
@@ -57,15 +56,18 @@ export default function ProfilesView(props) {
                 headers: { Authorization: `Bearer ${JWT}` }
             }
         ).then(res => {
-            // setShowModal(true)
+            setShowModal(true)
+
             if (!isSure) {
 
 
                 window.location.reload();
             }
             else {
-                props.setProfileSelected(res.headers);
-                window.location.reload();
+
+                props.setProfileSelected(res.headers)
+                window.location.reload()
+
             }
         })
             .catch(err => {
@@ -88,7 +90,7 @@ export default function ProfilesView(props) {
                 <FontAwesomeIcon icon={faCirclePlus} />
                 <h2>Nouveau</h2>
             </div>
-            <Modal className="mymodal text-white" show={showModal}>
+            < Modal className="mymodal text-white" show={showModal} >
                 <Modal.Header closeButton>
                     <Modal.Title>Delete Profile ?</Modal.Title>
                 </Modal.Header>
@@ -109,7 +111,7 @@ export default function ProfilesView(props) {
                         No
                     </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal >
         </div>
 
     );
