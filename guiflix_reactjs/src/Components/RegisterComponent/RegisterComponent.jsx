@@ -52,22 +52,22 @@ export default function RegisterComponent() {
             }
         }
         if (!validLastName.test(lastName)) {
-            errorList.push(<p className="text-danger">Your LastName is invalid</p>)
+            errorList.push(<p className="text-danger">Your LastName Should start with an Uppercase</p>)
         }
         if (!validFirstName.test(firstName)) {
-            errorList.push(<p className="text-danger">Your FirstName is invalid</p>)
+            errorList.push(<p className="text-danger">Your FirstName Should start with an Uppercase</p>)
         }
         if (!validPhone.test(phone)) {
-            errorList.push(<p className="text-danger">Your Phone is invalid</p>)
+            errorList.push(<p className="text-danger">Your Phone Should contains at least ten number</p>)
         }
         setFragmentError(
             <>
                 {
                     errorList.map((e, index) => {
-                    return (
-                        <div key={index}>{e}</div>
-                    )
-                })}
+                        return (
+                            <div key={index}>{e}</div>
+                        )
+                    })}
             </>
         )
         if (errorList.length === 0) {
@@ -76,7 +76,7 @@ export default function RegisterComponent() {
             }).then(
                 res => {
                     if (res.data.isRegisterationSuccessful) {
-                        prompt("Registeration Successfull","Your registeration is a success,\n Please Sign in to create your first profile","close")
+                        alert.show("Registeration Successfull", "Your registeration is a success,\n Please Sign in to create your first profile", "close")
                         navigate("/login")
                     }
                     else {
@@ -94,7 +94,7 @@ export default function RegisterComponent() {
             <div className="cardBord d-flex justify-content-center align-items-center"  >
                 <div className="col-md-6 col-lg-15 d-flex align-items-center">
                     <div className="card-body rounded p-8 p-lg-10 text-white">
-                        <form onSubmit={(e)=>{validate(); e.preventDefault()}}>
+                        <form onSubmit={(e) => { validate(); e.preventDefault() }}>
                             <h3 className="fw-normal mb-5 text-start" >Sign Up</h3>
                             <div className="form-outline mb-4">
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email-Address" className="form-control form-control-lg text-light bg-dark" />
@@ -115,7 +115,7 @@ export default function RegisterComponent() {
                                 <button className="btn btn-danger btn-lg mybutton w-100" type="submit">Sign Up</button>
                             </div>
                             <p className="p-2 text-start">
-                                <a href="#!" className="small text-muted">Terms of use.</a>
+                                <a href="#!" className="small text-muted">Terms of use. </a>
                                 <a href="#!" className="small text-muted">Privacy policy</a>
                             </p>
                             {fragmentError}
