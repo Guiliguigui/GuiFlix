@@ -1,6 +1,6 @@
 .registerview {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(12, 12, 12, 0.1), rgba(0, 0, 0, 0.8)), url(../../Assets/GuiFlixBackGroundHome.jpg);
-    height: 120vh;
+    height: 110vh;
     width: 100%;
     background-repeat: no-repeat;
     color: White;
@@ -15,36 +15,4 @@
 
 .mymodal .modal-content {
     background-color: black;
-
-}
-
-@media (max-width: 1000px),
-(max-height:650px) {
-    .card-body {
-        display: flex;
-    }
-
-    .btn {
-        transform: scale(1.5);
-        margin: 5vw;
-        width: 50px;
-    }
-
-    .divLink2 {
-        margin: 0;
-        padding: 20vh 0 0 0;
-    }
-
-}
-
-@media(max-width:350px),
-(max-height:200px) {
-    .divLink2 {
-        display: none;
-    }
-    .mybutton {
-        transform: scale(1.5);
-        margin: 5vw;
-        width: 5px;
-    }
 }

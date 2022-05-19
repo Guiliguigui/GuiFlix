@@ -23,20 +23,47 @@
 }
 .h1Text{
     font-weight: bold;
-    font-size: 60px;
+    font-size: 65px;
     margin-top: 15vh;
 }
-@media (max-width: 1000px),(max-height:650px) {
-    .divText,.divLink1{
+.displayText1{
+    font-size: 30px;
+}
+.displayText2{
+    font-size:23px
+}
+@media (max-width: 1260px),(max-height:650px) {
+   .divLink1{
         display: none;
+    }
+    .h1Text{
+        margin-top: 0;
+        padding-top: 10vh;
+        font-size:45px;
+    }
+    .displayText1{
+        font-size: 25px;
+    }
+    .displayText2{
+        font-size:20px;
     }
     .btnHome{
         transform: scale(1.5);
-        margin: 5vw;
+        margin: 2vh 3vw;
     }
     .divLink2{
         margin: 0;
         padding: 20vh 0 0 0;
+    }
+}
+@media(max-height:600px),(max-width:800px){
+    .displayText1,.displayText2{
+        display: none;
+    }
+}
+@media(max-height:420px),(max-width:450px){
+    .divText{
+        display: none;
     }
 }
 @media(max-width:350px),(max-height:200px){
