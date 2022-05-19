@@ -2,6 +2,7 @@
     background-color: black;
     color: white;
     display: flex;
+    width: 100%;
 }
 .linkNavBar{    
     text-decoration: none;
@@ -17,9 +18,11 @@
 .smallScreen{
     display: none;
 }
-@media(max-width:500px){
+@media(max-width:870px){
     .smallScreen{
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
     .largeScreen{
         display: none;

@@ -16,7 +16,7 @@ export default function NavBarComponent() {
     }
     return (<div className='NavBar'>
         <div className="largeScreen">
-            <Link to="/navigation"  ><img src={Logo} className="p-2" alt="LogoGuiFlix" width={150} /></Link>
+            <Link to="/navigation"><img src={Logo} className="p-2" alt="LogoGuiFlix" width={150} /></Link>
             <Link className="linkNavBar" to="/film"><FontAwesomeIcon icon={faClapperboard}/>&nbsp;Films</Link>
             <Link className="linkNavBar" to="/tvshow"><FontAwesomeIcon icon={faTv}/>&nbsp;TV Shows</Link>
             <Link className="linkNavBar navProfiles" to="/profile"><FontAwesomeIcon icon={faUserFriends}/>&nbsp;Profiles</Link>
@@ -27,7 +27,7 @@ export default function NavBarComponent() {
             <Link className="linkNavBar" to="/film" title='Films'><FontAwesomeIcon icon={faClapperboard}/></Link>
             <Link className="linkNavBar" to="/tvshow" title='TV Shows'><FontAwesomeIcon icon={faTv}/></Link>
             <Link className="linkNavBar navProfiles" to="/profile" title='Profiles'><FontAwesomeIcon icon={faUserFriends}/></Link>
-            <div className="linkNavBar navDisconnect" onClick={e=>logout()} title='Logout'><FontAwesomeIcon icon={faSignOut}/></div>
+            <a className="linkNavBar navDisconnect" onClick={e=>logout()} title='Logout'><FontAwesomeIcon icon={faSignOut}/></a>
         </div>
     </div>
     );
